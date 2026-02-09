@@ -112,11 +112,17 @@ export default function IndexHome() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Navigation />
       
-      {/* Hero Section */}
-      <header className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-br from-[#E32636] via-[#C41E3A] to-[#8B0000] text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
-        </div>
+      {/* Hero Section with Montage Background */}
+      <header className="relative overflow-hidden py-20 md:py-32 text-white">
+        {/* Background Montage Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://private-us-east-1.manuscdn.com/sessionFile/74D4rY78UoLus5hZrYfUHa/sandbox/g4IWIO5CX5FRx9WYV1PQ8g-img-1_1770611755000_na1fn_aGVyby1tb250YWdlLXN1cGVyYm93bC1hZHM.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvNzRENHJZNzhVb0x1czVoWnJZZlVIYS9zYW5kYm94L2c0SVdJTzVDWDVGUng5V1lWMVBROGctaW1nLTFfMTc3MDYxMTc1NTAwMF9uYTFmbl9hR1Z5YnkxdGIyNTBZV2RsTFhOMWNHVnlZbTkzYkMxaFpITS5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V-M9cRytr518LSBpmb~ZwGii91zHUYQkWYNiHE3gHTS7Cm52FghVaWVKf5KNjvN8dlnwCgjoOcrSPLY7F0~jWoA5UQEnfqG9ipeDTis85~IytsBwT3V9EVlch0qhmLRmDYU-L-Zw873PC1UjSrEkrYJcVZ3fF7dD7WNTU9IQxz3T3Qc7eOlM-G70Ds4PmTCFrKn2RaMg4lCdOrHAP4nu6i7ifS4UHIPhgCHoR~DSnfmTFUt9dTHM7nzQI7XGU~kMvGYqq9QGAK9I0qa8EmVYmhwMp15MEneYFvBzxlJb5bhERZZztwQz8scosv2CTiln-l05dEnOi-NIQ43uXIB34A__')"
+          }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#E32636]/85 via-[#C41E3A]/80 to-[#8B0000]/85" />
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8">
             <div className="flex justify-center">
