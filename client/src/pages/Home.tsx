@@ -90,6 +90,29 @@ export default function Home() {
           </Card>
         </section>
 
+        {/* Video Section */}
+        <section className="mb-16">
+          <Card className="shadow-lg overflow-hidden">
+            <CardHeader>
+              <div className="flex items-center gap-3 mb-2">
+                <Video className="h-7 w-7 text-primary" />
+                <CardTitle className="text-2xl md:text-3xl">Watch the Commercial</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="p-0">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/a_mh-v02-Tw"
+                  title="Budweiser Super Bowl LX American Icons Commercial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Commercial Overview */}
         <section className="mb-16">
           <Card className="shadow-lg">
