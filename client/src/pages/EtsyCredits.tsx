@@ -1,11 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Navigation from "@/components/Navigation";
 import { Award, Building2, Clapperboard, Film, Music, Palette, Users, Video, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function EtsyCredits() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
+      <Navigation />
       {/* Hero Section */}
       <header className="relative overflow-hidden py-20 md:py-32 text-white">
         <div 

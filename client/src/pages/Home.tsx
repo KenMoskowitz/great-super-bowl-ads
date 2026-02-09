@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Award, Film, Music, Palette, Users, Video, Sparkles, ArrowRight } from "lucide-react";
@@ -6,7 +7,8 @@ import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <Navigation />
       {/* Hero Section */}
       <header className="relative overflow-hidden py-20 md:py-32 text-white">
         <div 
