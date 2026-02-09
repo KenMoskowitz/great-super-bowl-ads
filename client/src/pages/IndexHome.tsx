@@ -169,7 +169,7 @@ export default function IndexHome() {
                 His work spans multiple roles—from Lead Writer to Senior Copywriter to Creative Writing Consultant—showcasing his versatility and deep understanding of what makes a Super Bowl commercial resonate with millions of viewers. Ken's commercials have topped USA Today's Ad Meter, ranked on YouTube's Top 10 Videos, and been celebrated for their humor, heart, and cultural impact.
               </p>
               <p className="text-lg leading-relaxed">
-                As co-founder of <a href="https://www.adzombies.com" target="_blank" rel="noopener noreferrer" className="text-[#E32636] font-semibold hover:underline">Ad Zombies</a>, a creative consultancy, Ken continues to bring his sharp wit and storytelling prowess to brands looking to make an impact on advertising's biggest stage.
+                As <strong>Founder</strong> of <a href="https://www.adzombies.com" target="_blank" rel="noopener noreferrer" className="text-[#E32636] font-semibold hover:underline">Ad Zombies</a> and <strong>Founder</strong> of Wedgie Creative, Ken is also a <strong>Featured Keynote Speaker</strong>, <strong>Fractional CMO</strong> for several companies, and <strong>Advertising Consultant</strong> for some of the world's biggest brands. He continues to bring his sharp wit and storytelling prowess to brands looking to make an impact on advertising's biggest stage.
               </p>
             </div>
           </CardContent>
@@ -275,7 +275,8 @@ export default function IndexHome() {
             <strong>Ken "Spanky" Moskowitz</strong> • Super Bowl Portfolio
           </p>
           <p className="text-sm text-gray-400 mb-4">
-            Co-founder of <a href="https://www.adzombies.com" target="_blank" rel="noopener noreferrer" className="text-[#FFD700] hover:underline">Ad Zombies</a>
+            Founder of <a href="https://www.adzombies.com" target="_blank" rel="noopener noreferrer" className="text-[#FFD700] hover:underline">Ad Zombies</a> • Founder of Wedgie Creative<br />
+            Featured Keynote Speaker • Fractional CMO • Advertising Consultant
           </p>
           <p className="text-xs text-gray-500">
             © 2026 All Rights Reserved • Complete Production Credits for 10 Super Bowl Commercials
