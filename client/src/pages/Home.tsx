@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Award, Film, Music, Palette, Users, Video, Sparkles } from "lucide-react";
+import { Award, Film, Music, Palette, Users, Video, Sparkles, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Home() {
   return (
@@ -581,8 +582,28 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Related Projects */}
+      <section className="mb-16">
+        <Card className="shadow-lg bg-gradient-to-r from-primary/5 to-primary/10">
+          <CardHeader>
+            <CardTitle className="text-2xl md:text-3xl">More Ken Moskowitz Credits</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Link href="/etsy">
+              <a className="flex items-center justify-between p-6 bg-background rounded-lg hover:shadow-md transition-shadow cursor-pointer">
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Etsy "Thank You, France"</h3>
+                  <p className="text-muted-foreground">Super Bowl LVIII (2024) • Creative Writing Consultant</p>
+                </div>
+                <ArrowRight className="h-6 w-6 text-primary" />
+              </a>
+            </Link>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-muted/50 border-t border-border py-8">
+      <footer className="bg-muted/30 py-8 mt-16">
         <div className="container text-center text-sm text-muted-foreground">
           <p>© 2026 Budweiser Super Bowl LX "American Icons" Production Credits</p>
           <p className="mt-2">For 150 Years, This Bud's For You</p>
