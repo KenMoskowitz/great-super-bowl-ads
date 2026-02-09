@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
       {/* Hero Section */}
-      <header className="bg-primary text-primary-foreground py-16 md:py-24 relative overflow-hidden">
+      <header className="relative overflow-hidden py-20 md:py-32 text-white">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663141268147/sWlwvjJBSpYvmZxr.jpeg)' }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663141268147/CjuYXCgkmLCrJyNd.jpg)' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-primary/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75"></div>
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge variant="secondary" className="mb-4 text-base px-4 py-1.5">
@@ -21,10 +21,10 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
               Budweiser "American Icons"
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 font-medium">
+            <p className="text-xl md:text-2xl text-white/95 font-medium">
               Complete Production Credits
             </p>
-            <p className="text-base md:text-lg text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-white/85 max-w-3xl mx-auto leading-relaxed">
               Celebrating 150 years of Budweiser and America's 250th birthday with the iconic Clydesdale and Bald Eagle
             </p>
           </div>
