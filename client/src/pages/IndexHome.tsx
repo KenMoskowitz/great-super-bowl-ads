@@ -182,6 +182,33 @@ export default function IndexHome() {
         </Card>
       </section>
 
+      {/* Quick Navigation with Descriptive Links */}
+      <section className="container py-12 bg-white/50 rounded-lg">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-6">Explore by Category</h2>
+          <div className="grid md:grid-cols-3 gap-4 text-center">
+            <Link href="/budweiser-american-icons">
+              <a className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-[#E32636] mb-2">Latest: Budweiser 2026</h3>
+                <p className="text-sm text-gray-600">American Icons featuring Clydesdale and eagle</p>
+              </a>
+            </Link>
+            <Link href="/state-farm-agent">
+              <a className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-[#E32636] mb-2">#1 Ad Meter Winner</h3>
+                <p className="text-sm text-gray-600">State Farm with Arnold Schwarzenegger</p>
+              </a>
+            </Link>
+            <Link href="/volkswagen-the-force">
+              <a className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-[#E32636] mb-2">Viral Sensation</h3>
+                <p className="text-sm text-gray-600">Volkswagen The Force - #9 YouTube Top 10</p>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Commercials Grid */}
       <section className="container py-16 md:py-20">
         <div className="text-center mb-12">
@@ -203,6 +230,7 @@ export default function IndexHome() {
                     <img 
                       src={commercial.image} 
                       alt={commercial.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>

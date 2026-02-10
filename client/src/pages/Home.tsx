@@ -4,8 +4,58 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Award, Film, Music, Palette, Users, Video, Sparkles, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    // Add VideoObject and BreadcrumbList structured data
+    const videoSchema = {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Budweiser American Icons Super Bowl LX Commercial",
+      "description": "Complete production credits for Budweiser's American Icons Super Bowl 60 commercial featuring Clydesdale and bald eagle celebrating 150 years of Budweiser",
+      "thumbnailUrl": "https://img.youtube.com/vi/a_mh-v02-Tw/maxresdefault.jpg",
+      "uploadDate": "2026-02-09",
+      "contentUrl": "https://www.youtube.com/watch?v=a_mh-v02-Tw",
+      "embedUrl": "https://www.youtube.com/embed/a_mh-v02-Tw",
+      "duration": "PT60S"
+    };
+    
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://budweiser-sb60-credits.manus.space/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Budweiser: American Icons '26",
+          "item": "https://budweiser-sb60-credits.manus.space/budweiser-american-icons"
+        }
+      ]
+    };
+    
+    const videoScript = document.createElement('script');
+    videoScript.type = 'application/ld+json';
+    videoScript.text = JSON.stringify(videoSchema);
+    document.head.appendChild(videoScript);
+    
+    const breadcrumbScript = document.createElement('script');
+    breadcrumbScript.type = 'application/ld+json';
+    breadcrumbScript.text = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(breadcrumbScript);
+    
+    return () => {
+      if (videoScript.parentNode) document.head.removeChild(videoScript);
+      if (breadcrumbScript.parentNode) document.head.removeChild(breadcrumbScript);
+    };
+  }, []);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Navigation />

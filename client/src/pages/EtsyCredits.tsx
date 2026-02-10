@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import { Award, Building2, Clapperboard, Film, Music, Palette, Users, Video, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from "react";
 
 export default function EtsyCredits() {
   return (
