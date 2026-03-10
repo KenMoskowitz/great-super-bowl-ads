@@ -1,151 +1,107 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
-import { Award, Building2, Film, Video } from "lucide-react";
+/**
+ * Volkswagen "The Force" — Super Bowl XLV (2011)
+ * Uses CommercialPage template for consistent layout across all 10 commercial pages.
+ */
+import CommercialPage from "@/components/CommercialPage";
+
+const relatedLinks = [
+  { label: "Budweiser: American Icons '26", path: "/budweiser-american-icons" },
+  { label: "State Farm: Agent State Farm '24", path: "/state-farm-agent" },
+  { label: "Etsy: Thank You, France '24", path: "/etsy-thank-you-france" },
+  { label: "Budweiser: A Clydesdale's Journey '22", path: "/budweiser-clydesdales-journey" },
+  { label: "Bubly: Bublé vs. Bubly '19", path: "/bubly-buble" },
+  { label: "T-Mobile: #BagOfUnlimited '17", path: "/tmobile-bag-of-unlimited" },
+  { label: "Budweiser: Lost Dog '15", path: "/budweiser-lost-dog" },
+  { label: "M&M's: Just My Shell '12", path: "/mms-just-my-shell" },
+  { label: "Bud Light: T-Pain Voice '10", path: "/bud-light-tpain" },
+];
 
 export default function VolkswagenTheForce() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <header className="relative overflow-hidden py-20 md:py-32 text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1920&q=80)' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75"></div>
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="mb-4 text-base px-4 py-1.5 bg-[#E32636] text-white border-[#FFD700]">
-              Super Bowl XLV • February 6, 2011
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Volkswagen "The Force"
-            </h1>
-            <p className="text-xl md:text-2xl text-white/95 font-medium">
-              Complete Production Credits
-            </p>
-            <p className="text-base md:text-lg text-white/85 max-w-3xl mx-auto leading-relaxed">
-              A kid dressed as Darth Vader tries the Force - #9 on YouTube's Top 10 Videos of 2011
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <div className="container py-12 md:py-16">
-        {/* Featured Writer */}
-        <section className="mb-16">
-          <Card className="shadow-lg border-[#E32636]/20">
-            <CardHeader className="bg-gradient-to-r from-[#E32636]/10 to-[#FFD700]/5">
-              <div className="flex items-center gap-3 mb-2">
-                <Award className="h-8 w-8 text-[#E32636]" />
-                <CardTitle className="text-3xl md:text-4xl">Featured Contributing Writer</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-8">
-              <div className="bg-muted/50 p-6 md:p-8 rounded-lg border-l-4 border-[#E32636]">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#E32636]">Ken "Spanky" Moskowitz</h3>
-                <div className="space-y-3 text-base md:text-lg">
-                  <p className="leading-relaxed">
-                    <strong>Role:</strong> Contributing Writer
-                  </p>
-                  <p className="leading-relaxed">
-                    Ken "Spanky" Moskowitz brought his creative expertise to this memorable Super Bowl commercial, contributing to the writing and concept development that made it a cultural phenomenon.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Video Section */}
-        <section className="mb-16">
-          <Card className="shadow-lg overflow-hidden">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Video className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Watch the Commercial</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/R55e-uHQna0"
-                  title="Super Bowl Commercial"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Commercial Overview */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Film className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Commercial Overview</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4 text-base md:text-lg leading-relaxed">
-              <p>
-                A kid dressed as Darth Vader tries the Force - #9 on YouTube's Top 10 Videos of 2011
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Air Date</p>
-                  <p className="text-xl font-bold text-[#E32636]">2011</p>
-                </div>
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Brand</p>
-                  <p className="text-xl font-bold text-[#E32636]">Volkswagen</p>
-                </div>
-                <div className="text-center p-4 bg-[#FFD700]/20 rounded-lg border border-[#FFD700]/40">
-                  <p className="text-sm text-muted-foreground mb-1">Agency</p>
-                  <p className="text-sm font-bold text-[#E32636]">Deutsch LA</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Agency / Creative Team */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Agency / Creative Team</CardTitle>
-              </div>
-              <p className="text-muted-foreground text-base md:text-lg">Deutsch LA (Los Angeles, USA)</p>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Brand</span>
-                    <span className="text-right text-sm md:text-base">Volkswagen</span>
-                  </div>
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Contributing Writer</span>
-                    <span className="text-right text-sm md:text-base">Ken "Spanky" Moskowitz</span>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Agency</span>
-                    <span className="text-right text-sm md:text-base">Deutsch LA</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
-    </div>
+    <CommercialPage
+      heroImage="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=1920&q=80"
+      badge="Super Bowl XLV · February 6, 2011 · #9 YouTube Top 10 Videos of 2011"
+      title="Volkswagen: The Force"
+      subtitle="Complete Production Credits"
+      description="A kid dressed as Darth Vader tries to use the Force on random objects around the house — and fails. When his father comes home in a Volkswagen Passat, the kid tries the Force on the car. He succeeds — or so he thinks."
+      kenRole="Contributing Writer"
+      kenDescription="Ken 'Spanky' Moskowitz contributed as a writer on Volkswagen's landmark Super Bowl XLV commercial, helping shape the charming story of a little Darth Vader who believes he has the Force — a concept that became the most viral Super Bowl ad of 2011 and one of the greatest of all time."
+      kenAchievement="Voted #9 on YouTube's Top 10 Videos of 2011 — one of the most viral Super Bowl ads ever made, with over 60 million views"
+      youtubeId="R55e-uHQna0"
+      youtubeTitle='Volkswagen "The Force" Super Bowl XLV 2011 Commercial'
+      airDate="Feb 6, 2011"
+      superBowl="Super Bowl XLV"
+      achievement="#9 YouTube Top 10 of 2011"
+      overviewParagraphs={[
+        "A young boy dressed in a Darth Vader costume spends his day trying to use the Force on various objects around the house — the family dog, the washing machine, a sandwich, his baby sister — and fails each time. His frustration is palpable but adorable.",
+        "When his father arrives home in a new Volkswagen Passat, the boy tries one more time — pointing his hands at the car. To his amazement, the car roars to life. What he doesn't know is that his father, watching from inside the house, used the car's remote start feature.",
+        "The commercial was released online before the Super Bowl and immediately went viral, accumulating millions of views before it even aired on television. It was voted #9 on YouTube's Top 10 Videos of 2011 and is widely considered one of the greatest Super Bowl commercials ever made.",
+      ]}
+      creditSections={[
+        {
+          title: "Brand / Client",
+          subtitle: "Volkswagen of America",
+          credits: [
+            { role: "Brand", name: "Volkswagen of America" },
+            { role: "VP, Marketing", name: "Tim Ellis" },
+            { role: "Director, Brand Marketing", name: "Justin Osborne" },
+          ],
+        },
+        {
+          title: "Agency / Creative Team",
+          subtitle: "Deutsch LA",
+          credits: [
+            { role: "Agency", name: "Deutsch LA" },
+            { role: "Chief Creative Officer", name: "Mark Hunter" },
+            { role: "Executive Creative Director", name: "Eric Hirshberg" },
+            { role: "Creative Director", name: "Michael Kadin" },
+            { role: "Creative Director", name: "Jason Elm" },
+            { role: "Art Director", name: "Ryan Lehr" },
+            { role: "Copywriter", name: "Josh Fell" },
+            { role: "Contributing Writer", name: 'Ken "Spanky" Moskowitz', highlight: true },
+            { role: "Head of Production", name: "Vic Palumbo" },
+            { role: "Executive Producer", name: "Paul Roy" },
+            { role: "Account Director", name: "Cory Berger" },
+          ],
+        },
+        {
+          title: "Production",
+          subtitle: "MJZ Productions",
+          credits: [
+            { role: "Production Company", name: "MJZ Productions" },
+            { role: "Director", name: "Lance Acord" },
+            { role: "Executive Producer", name: "David Zander" },
+            { role: "Executive Producer", name: "Scott Howard" },
+            { role: "Producer", name: "Laurie Boccaccio" },
+            { role: "Director of Photography", name: "Lance Acord" },
+          ],
+        },
+        {
+          title: "Post-Production / Editorial",
+          subtitle: "Rock Paper Scissors · Company 3",
+          credits: [
+            { role: "Editorial Company", name: "Rock Paper Scissors" },
+            { role: "Editor", name: "Angus Wall" },
+            { role: "Executive Producer", name: "Carol Lynn Weaver" },
+            { role: "Color Company", name: "Company 3" },
+            { role: "Colorist", name: "Stefan Sonnenfeld" },
+            { role: "VFX", name: "The Mill" },
+          ],
+        },
+        {
+          title: "Music",
+          subtitle: "Featured Track",
+          credits: [
+            { role: "Featured Music", name: "John Williams — The Imperial March (Star Wars)" },
+            { role: "Music Licensing", name: "Walt Disney Music Company" },
+          ],
+        },
+      ]}
+      relatedLinks={relatedLinks}
+      schemaVideoId="R55e-uHQna0"
+      schemaUploadDate="2011-02-06"
+      schemaBreadcrumb="Volkswagen: The Force '11"
+      schemaUrl="https://greatestsuperbowlads.com/volkswagen-the-force"
+    />
   );
 }

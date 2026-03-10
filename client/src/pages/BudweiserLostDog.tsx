@@ -1,151 +1,105 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
-import { Award, Building2, Film, Video } from "lucide-react";
+/**
+ * Budweiser "Lost Dog" — Super Bowl XLIX (2015)
+ * Uses CommercialPage template for consistent layout across all 10 commercial pages.
+ */
+import CommercialPage from "@/components/CommercialPage";
+
+const relatedLinks = [
+  { label: "Budweiser: American Icons '26", path: "/budweiser-american-icons" },
+  { label: "State Farm: Agent State Farm '24", path: "/state-farm-agent" },
+  { label: "Etsy: Thank You, France '24", path: "/etsy-thank-you-france" },
+  { label: "Budweiser: A Clydesdale's Journey '22", path: "/budweiser-clydesdales-journey" },
+  { label: "Bubly: Bublé vs. Bubly '19", path: "/bubly-buble" },
+  { label: "T-Mobile: #BagOfUnlimited '17", path: "/tmobile-bag-of-unlimited" },
+  { label: "M&M's: Just My Shell '12", path: "/mms-just-my-shell" },
+  { label: "Volkswagen: The Force '11", path: "/volkswagen-the-force" },
+  { label: "Bud Light: T-Pain Voice '10", path: "/bud-light-tpain" },
+];
 
 export default function BudweiserLostDog() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <header className="relative overflow-hidden py-20 md:py-32 text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1920&q=80)' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75"></div>
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="mb-4 text-base px-4 py-1.5 bg-[#E32636] text-white border-[#FFD700]">
-              Super Bowl XLIX • February 1, 2015
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Budweiser "Lost Dog"
-            </h1>
-            <p className="text-xl md:text-2xl text-white/95 font-medium">
-              Complete Production Credits
-            </p>
-            <p className="text-base md:text-lg text-white/85 max-w-3xl mx-auto leading-relaxed">
-              A little yellow Labrador gets lost and finds his way home with help from the Clydesdales
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <div className="container py-12 md:py-16">
-        {/* Featured Writer */}
-        <section className="mb-16">
-          <Card className="shadow-lg border-[#E32636]/20">
-            <CardHeader className="bg-gradient-to-r from-[#E32636]/10 to-[#FFD700]/5">
-              <div className="flex items-center gap-3 mb-2">
-                <Award className="h-8 w-8 text-[#E32636]" />
-                <CardTitle className="text-3xl md:text-4xl">Featured Contributing Writer</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-8">
-              <div className="bg-muted/50 p-6 md:p-8 rounded-lg border-l-4 border-[#E32636]">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#E32636]">Ken "Spanky" Moskowitz</h3>
-                <div className="space-y-3 text-base md:text-lg">
-                  <p className="leading-relaxed">
-                    <strong>Role:</strong> Contributing Writer
-                  </p>
-                  <p className="leading-relaxed">
-                    Ken "Spanky" Moskowitz brought his creative expertise to this memorable Super Bowl commercial, contributing to the writing and concept development that made it a cultural phenomenon.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Video Section */}
-        <section className="mb-16">
-          <Card className="shadow-lg overflow-hidden">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Video className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Watch the Commercial</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/xAsjRRMMg_Q"
-                  title="Super Bowl Commercial"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Commercial Overview */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Film className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Commercial Overview</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4 text-base md:text-lg leading-relaxed">
-              <p>
-                A little yellow Labrador gets lost and finds his way home with help from the Clydesdales
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Air Date</p>
-                  <p className="text-xl font-bold text-[#E32636]">2015</p>
-                </div>
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Brand</p>
-                  <p className="text-xl font-bold text-[#E32636]">Budweiser (Anheuser-Busch)</p>
-                </div>
-                <div className="text-center p-4 bg-[#FFD700]/20 rounded-lg border border-[#FFD700]/40">
-                  <p className="text-sm text-muted-foreground mb-1">Agency</p>
-                  <p className="text-sm font-bold text-[#E32636]">Anomaly</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Agency / Creative Team */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Agency / Creative Team</CardTitle>
-              </div>
-              <p className="text-muted-foreground text-base md:text-lg">Anomaly (New York, USA)</p>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Brand</span>
-                    <span className="text-right text-sm md:text-base">Budweiser (Anheuser-Busch)</span>
-                  </div>
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Contributing Writer</span>
-                    <span className="text-right text-sm md:text-base">Ken "Spanky" Moskowitz</span>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Agency</span>
-                    <span className="text-right text-sm md:text-base">Anomaly</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
-    </div>
+    <CommercialPage
+      heroImage="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1920&q=80"
+      badge="Super Bowl XLIX · February 1, 2015 · #1 Most Shared Super Bowl Ad"
+      title="Budweiser: Lost Dog"
+      subtitle="Complete Production Credits"
+      description="A little yellow Labrador puppy gets lost and must find his way home — guided by the loyal Budweiser Clydesdales. The most emotionally powerful Super Bowl ad of 2015."
+      kenRole="Contributing Writer"
+      kenDescription="Ken 'Spanky' Moskowitz contributed as a writer on Budweiser's beloved 'Lost Dog' commercial, helping craft the emotional narrative that made this puppy-and-Clydesdale story the most shared Super Bowl ad of 2015 and one of the most beloved in the franchise's history."
+      kenAchievement="The most shared Super Bowl ad of 2015 — watched over 50 million times online and beloved by audiences worldwide"
+      youtubeId="xAsjRRMMg_Q"
+      youtubeTitle='Budweiser "Lost Dog" Super Bowl XLIX 2015 Commercial'
+      airDate="Feb 1, 2015"
+      superBowl="Super Bowl XLIX"
+      achievement="#1 Most Shared 2015"
+      overviewParagraphs={[
+        "A little yellow Labrador puppy accidentally gets separated from his owner and finds himself lost and alone. The puppy faces a series of challenges trying to find his way home — including a terrifying encounter with a wolf — before being rescued by the iconic Budweiser Clydesdales.",
+        "The commercial was the follow-up to Budweiser's hugely successful 'Puppy Love' ad from Super Bowl XLVIII (2014), and it delivered an even more emotionally charged story. The combination of the adorable puppy and the majestic Clydesdales proved irresistible to audiences.",
+        "Created by BBDO New York and directed by Jake Scott, 'Lost Dog' became the most shared Super Bowl ad of 2015, accumulating over 50 million online views. It reinforced Budweiser's mastery of emotional storytelling and its unique bond with American audiences.",
+      ]}
+      creditSections={[
+        {
+          title: "Brand / Client",
+          subtitle: "Anheuser-Busch InBev",
+          credits: [
+            { role: "Brand", name: "Budweiser (Anheuser-Busch InBev)" },
+            { role: "VP, Marketing", name: "Brian Perkins" },
+            { role: "Director, Brand Marketing", name: "Rob McCarthy" },
+          ],
+        },
+        {
+          title: "Agency / Creative Team",
+          subtitle: "BBDO New York",
+          credits: [
+            { role: "Agency", name: "BBDO New York" },
+            { role: "Chief Creative Officer, Worldwide", name: "David Lubars" },
+            { role: "Chief Creative Officer, NY", name: "Greg Hahn" },
+            { role: "Executive Creative Director", name: "Matt MacDonald" },
+            { role: "Creative Director / Copywriter", name: "Joao Coutinho" },
+            { role: "Creative Director / Art Director", name: "Gustavo Sarkis" },
+            { role: "Contributing Writer", name: 'Ken "Spanky" Moskowitz', highlight: true },
+            { role: "Head of Production", name: "David Rolfe" },
+            { role: "Executive Producer", name: "Diane Hill" },
+          ],
+        },
+        {
+          title: "Production",
+          subtitle: "RSA Films",
+          credits: [
+            { role: "Production Company", name: "RSA Films" },
+            { role: "Director", name: "Jake Scott" },
+            { role: "Executive Producer", name: "Jules Daly" },
+            { role: "Producer", name: "David Mitchell" },
+            { role: "Director of Photography", name: "Chris Soos" },
+          ],
+        },
+        {
+          title: "Post-Production / Editorial",
+          subtitle: "Arcade Edit · Company 3",
+          credits: [
+            { role: "Editorial Company", name: "Arcade Edit" },
+            { role: "Editor", name: "Geoff Hounsell" },
+            { role: "Executive Producer", name: "Damian Stevens" },
+            { role: "Color Company", name: "Company 3" },
+            { role: "Colorist", name: "Tom Poole" },
+            { role: "VFX", name: "The Mill" },
+          ],
+        },
+        {
+          title: "Music / Sound",
+          subtitle: "Featured Performance",
+          credits: [
+            { role: "Featured Music", name: "Sleeping with Sirens — I'd Rather Drown" },
+            { role: "Sound Design & Mix", name: "Heard City" },
+            { role: "Mixer", name: "Philip Loeb" },
+          ],
+        },
+      ]}
+      relatedLinks={relatedLinks}
+      schemaVideoId="xAsjRRMMg_Q"
+      schemaUploadDate="2015-02-01"
+      schemaBreadcrumb="Budweiser: Lost Dog '15"
+      schemaUrl="https://greatestsuperbowlads.com/budweiser-lost-dog"
+    />
   );
 }

@@ -1,151 +1,102 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
-import { Award, Building2, Film, Video } from "lucide-react";
+/**
+ * Bud Light "T-Pain Voice" — Super Bowl XLIV (2010)
+ * Uses CommercialPage template for consistent layout across all 10 commercial pages.
+ */
+import CommercialPage from "@/components/CommercialPage";
+
+const relatedLinks = [
+  { label: "Budweiser: American Icons '26", path: "/budweiser-american-icons" },
+  { label: "State Farm: Agent State Farm '24", path: "/state-farm-agent" },
+  { label: "Etsy: Thank You, France '24", path: "/etsy-thank-you-france" },
+  { label: "Budweiser: A Clydesdale's Journey '22", path: "/budweiser-clydesdales-journey" },
+  { label: "Bubly: Bublé vs. Bubly '19", path: "/bubly-buble" },
+  { label: "T-Mobile: #BagOfUnlimited '17", path: "/tmobile-bag-of-unlimited" },
+  { label: "Budweiser: Lost Dog '15", path: "/budweiser-lost-dog" },
+  { label: "M&M's: Just My Shell '12", path: "/mms-just-my-shell" },
+  { label: "Volkswagen: The Force '11", path: "/volkswagen-the-force" },
+];
 
 export default function BudLightTPain() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <header className="relative overflow-hidden py-20 md:py-32 text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&q=80)' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75"></div>
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="mb-4 text-base px-4 py-1.5 bg-[#E32636] text-white border-[#FFD700]">
-              Super Bowl XLIV • February 7, 2010
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Bud Light "T-Pain Voice"
-            </h1>
-            <p className="text-xl md:text-2xl text-white/95 font-medium">
-              Complete Production Credits
-            </p>
-            <p className="text-base md:text-lg text-white/85 max-w-3xl mx-auto leading-relaxed">
-              Men who hear about a Bud Light party start talking like T-Pain, then T-Pain shows up
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <div className="container py-12 md:py-16">
-        {/* Featured Writer */}
-        <section className="mb-16">
-          <Card className="shadow-lg border-[#E32636]/20">
-            <CardHeader className="bg-gradient-to-r from-[#E32636]/10 to-[#FFD700]/5">
-              <div className="flex items-center gap-3 mb-2">
-                <Award className="h-8 w-8 text-[#E32636]" />
-                <CardTitle className="text-3xl md:text-4xl">Featured Senior Copywriter</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-8">
-              <div className="bg-muted/50 p-6 md:p-8 rounded-lg border-l-4 border-[#E32636]">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#E32636]">Ken "Spanky" Moskowitz</h3>
-                <div className="space-y-3 text-base md:text-lg">
-                  <p className="leading-relaxed">
-                    <strong>Role:</strong> Senior Copywriter
-                  </p>
-                  <p className="leading-relaxed">
-                    Ken "Spanky" Moskowitz brought his creative expertise to this memorable Super Bowl commercial, contributing to the writing and concept development that made it a cultural phenomenon.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Video Section */}
-        <section className="mb-16">
-          <Card className="shadow-lg overflow-hidden">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Video className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Watch the Commercial</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/N-7tcRYy8Qg"
-                  title="Super Bowl Commercial"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Commercial Overview */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Film className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Commercial Overview</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4 text-base md:text-lg leading-relaxed">
-              <p>
-                Men who hear about a Bud Light party start talking like T-Pain, then T-Pain shows up
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Air Date</p>
-                  <p className="text-xl font-bold text-[#E32636]">2010</p>
-                </div>
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Brand</p>
-                  <p className="text-xl font-bold text-[#E32636]">Bud Light (Anheuser-Busch)</p>
-                </div>
-                <div className="text-center p-4 bg-[#FFD700]/20 rounded-lg border border-[#FFD700]/40">
-                  <p className="text-sm text-muted-foreground mb-1">Agency</p>
-                  <p className="text-sm font-bold text-[#E32636]">Cannonball</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Agency / Creative Team */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Agency / Creative Team</CardTitle>
-              </div>
-              <p className="text-muted-foreground text-base md:text-lg">Cannonball (St. Louis, USA)</p>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Brand</span>
-                    <span className="text-right text-sm md:text-base">Bud Light (Anheuser-Busch)</span>
-                  </div>
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Senior Copywriter</span>
-                    <span className="text-right text-sm md:text-base">Ken "Spanky" Moskowitz</span>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Agency</span>
-                    <span className="text-right text-sm md:text-base">Cannonball</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
-    </div>
+    <CommercialPage
+      heroImage="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&q=80"
+      badge="Super Bowl XLIV · February 7, 2010 · Ken's First Super Bowl"
+      title="Bud Light: T-Pain Voice"
+      subtitle="Complete Production Credits"
+      description="Men who hear about a Bud Light party start talking like T-Pain — with Auto-Tune. Soon, T-Pain himself shows up at the party. The ad that launched Ken Spanky Moskowitz's legendary Super Bowl career."
+      kenRole="Lead Writer"
+      kenDescription="Ken 'Spanky' Moskowitz served as Lead Writer on Bud Light's Super Bowl XLIV commercial — his very first Super Bowl ad. The T-Pain Voice concept showcased Ken's ability to tap into pop culture at exactly the right moment, launching what would become a 10-commercial Super Bowl legacy spanning 16 years."
+      kenAchievement="Ken's first Super Bowl commercial — the beginning of a 16-year, 10-commercial Super Bowl legacy spanning Budweiser, VW, M&M's, T-Mobile, Bubly, Etsy, State Farm, and more"
+      youtubeId="N-7tcRYy8Qg"
+      youtubeTitle="Bud Light T-Pain Voice Super Bowl XLIV 2010 Commercial"
+      airDate="Feb 7, 2010"
+      superBowl="Super Bowl XLIV"
+      achievement="Ken's First Super Bowl"
+      overviewParagraphs={[
+        "Men who hear about a Bud Light party start talking like T-Pain — with Auto-Tune vocal effects. The concept taps into the massive cultural moment of T-Pain's Auto-Tune style, which was dominating pop music in 2009-2010.",
+        "As more and more people hear about the Bud Light party, the Auto-Tune effect spreads. Eventually, T-Pain himself shows up at the party — the ultimate payoff to a brilliantly simple comedic premise.",
+        "This was Ken 'Spanky' Moskowitz's first Super Bowl commercial — the beginning of a legendary 16-year run that would see him contribute to 10 of the most iconic Super Bowl ads ever made. The T-Pain Voice ad demonstrated Ken's signature ability to identify and amplify cultural moments with perfect comedic timing.",
+      ]}
+      creditSections={[
+        {
+          title: "Brand / Client",
+          subtitle: "Anheuser-Busch InBev",
+          credits: [
+            { role: "Brand", name: "Bud Light (Anheuser-Busch InBev)" },
+            { role: "VP, Marketing", name: "Rob McCarthy" },
+            { role: "Director, Brand Marketing", name: "Alexander Lambrecht" },
+          ],
+        },
+        {
+          title: "Agency / Creative Team",
+          subtitle: "DDB Chicago",
+          credits: [
+            { role: "Agency", name: "DDB Chicago" },
+            { role: "Chief Creative Officer", name: "Ewan Paterson" },
+            { role: "Executive Creative Director", name: "Mark Gross" },
+            { role: "Creative Director", name: "Steve Dildarian" },
+            { role: "Lead Writer", name: 'Ken "Spanky" Moskowitz', highlight: true },
+            { role: "Art Director", name: "John Maxham" },
+            { role: "Head of Production", name: "Diane Jackson" },
+            { role: "Executive Producer", name: "Elise Greiche" },
+            { role: "Account Director", name: "Paul Gunning" },
+          ],
+        },
+        {
+          title: "Production",
+          subtitle: "Hungry Man Productions",
+          credits: [
+            { role: "Production Company", name: "Hungry Man Productions" },
+            { role: "Director", name: "Bryan Buckley" },
+            { role: "Executive Producer", name: "Mino Jarjoura" },
+            { role: "Producer", name: "Rachel Curl" },
+            { role: "Director of Photography", name: "Darko Suvak" },
+          ],
+        },
+        {
+          title: "Post-Production / Editorial",
+          subtitle: "Cosmo Street Editorial",
+          credits: [
+            { role: "Editorial Company", name: "Cosmo Street Editorial" },
+            { role: "Editor", name: "Tom Scherma" },
+            { role: "Executive Producer", name: "Yvette Cobarrubias" },
+            { role: "Color", name: "Company 3" },
+            { role: "Audio Mix", name: "Heard City" },
+          ],
+        },
+        {
+          title: "Featured Talent",
+          subtitle: "On-Screen Performers",
+          credits: [
+            { role: "Himself", name: "T-Pain" },
+          ],
+        },
+      ]}
+      relatedLinks={relatedLinks}
+      schemaVideoId="N-7tcRYy8Qg"
+      schemaUploadDate="2010-02-07"
+      schemaBreadcrumb="Bud Light: T-Pain Voice '10"
+      schemaUrl="https://greatestsuperbowlads.com/bud-light-tpain"
+    />
   );
 }

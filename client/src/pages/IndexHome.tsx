@@ -187,23 +187,17 @@ export default function IndexHome() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-6">Explore by Category</h2>
           <div className="grid md:grid-cols-3 gap-4 text-center">
-            <Link href="/budweiser-american-icons">
-              <a className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+            <Link href="/budweiser-american-icons" className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-[#E32636] mb-2">Latest: Budweiser 2026</h3>
                 <p className="text-sm text-gray-600">American Icons featuring Clydesdale and eagle</p>
-              </a>
             </Link>
-            <Link href="/state-farm-agent">
-              <a className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+            <Link href="/state-farm-agent" className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-[#E32636] mb-2">#1 Ad Meter Winner</h3>
                 <p className="text-sm text-gray-600">State Farm with Arnold Schwarzenegger</p>
-              </a>
             </Link>
-            <Link href="/volkswagen-the-force">
-              <a className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+            <Link href="/volkswagen-the-force" className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-[#E32636] mb-2">Viral Sensation</h3>
                 <p className="text-sm text-gray-600">Volkswagen The Force - #9 YouTube Top 10</p>
-              </a>
             </Link>
           </div>
         </div>
@@ -223,8 +217,7 @@ export default function IndexHome() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {commercials.map((commercial, index) => (
-            <Link key={index} href={commercial.path}>
-              <a className="group">
+            <Link key={index} href={commercial.path} className="group block">
                 <Card className="shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-[#E32636]/30 h-full">
                   <div className="relative h-48 overflow-hidden">
                     <img 
@@ -266,7 +259,6 @@ export default function IndexHome() {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
             </Link>
           ))}
         </div>

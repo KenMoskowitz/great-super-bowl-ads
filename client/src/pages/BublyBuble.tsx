@@ -1,151 +1,100 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
-import { Award, Building2, Film, Video } from "lucide-react";
+/**
+ * Bubly "Bublé vs. Bubly" — Super Bowl LIII (2019)
+ * Uses CommercialPage template for consistent layout across all 10 commercial pages.
+ */
+import CommercialPage from "@/components/CommercialPage";
+
+const relatedLinks = [
+  { label: "Budweiser: American Icons '26", path: "/budweiser-american-icons" },
+  { label: "State Farm: Agent State Farm '24", path: "/state-farm-agent" },
+  { label: "Etsy: Thank You, France '24", path: "/etsy-thank-you-france" },
+  { label: "Budweiser: A Clydesdale's Journey '22", path: "/budweiser-clydesdales-journey" },
+  { label: "T-Mobile: #BagOfUnlimited '17", path: "/tmobile-bag-of-unlimited" },
+  { label: "Budweiser: Lost Dog '15", path: "/budweiser-lost-dog" },
+  { label: "M&M's: Just My Shell '12", path: "/mms-just-my-shell" },
+  { label: "Volkswagen: The Force '11", path: "/volkswagen-the-force" },
+  { label: "Bud Light: T-Pain Voice '10", path: "/bud-light-tpain" },
+];
 
 export default function BublyBuble() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <header className="relative overflow-hidden py-20 md:py-32 text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&q=80)' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75"></div>
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="mb-4 text-base px-4 py-1.5 bg-[#E32636] text-white border-[#FFD700]">
-              Super Bowl LIII • February 3, 2019
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Bubly "Bublé vs. Bubly"
-            </h1>
-            <p className="text-xl md:text-2xl text-white/95 font-medium">
-              Complete Production Credits
-            </p>
-            <p className="text-base md:text-lg text-white/85 max-w-3xl mx-auto leading-relaxed">
-              Michael Bublé insists on pronouncing Bubly as "Bublé" in this hilarious Super Bowl debut
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <div className="container py-12 md:py-16">
-        {/* Featured Writer */}
-        <section className="mb-16">
-          <Card className="shadow-lg border-[#E32636]/20">
-            <CardHeader className="bg-gradient-to-r from-[#E32636]/10 to-[#FFD700]/5">
-              <div className="flex items-center gap-3 mb-2">
-                <Award className="h-8 w-8 text-[#E32636]" />
-                <CardTitle className="text-3xl md:text-4xl">Featured Lead Writer</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-8">
-              <div className="bg-muted/50 p-6 md:p-8 rounded-lg border-l-4 border-[#E32636]">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#E32636]">Ken "Spanky" Moskowitz</h3>
-                <div className="space-y-3 text-base md:text-lg">
-                  <p className="leading-relaxed">
-                    <strong>Role:</strong> Lead Writer
-                  </p>
-                  <p className="leading-relaxed">
-                    Ken "Spanky" Moskowitz brought his creative expertise to this memorable Super Bowl commercial, contributing to the writing and concept development that made it a cultural phenomenon.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Video Section */}
-        <section className="mb-16">
-          <Card className="shadow-lg overflow-hidden">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Video className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Watch the Commercial</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/rrk6QQfAZpc"
-                  title="Super Bowl Commercial"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Commercial Overview */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Film className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Commercial Overview</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4 text-base md:text-lg leading-relaxed">
-              <p>
-                Michael Bublé insists on pronouncing Bubly as "Bublé" in this hilarious Super Bowl debut
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Air Date</p>
-                  <p className="text-xl font-bold text-[#E32636]">2019</p>
-                </div>
-                <div className="text-center p-4 bg-[#E32636]/5 rounded-lg border border-[#E32636]/20">
-                  <p className="text-sm text-muted-foreground mb-1">Brand</p>
-                  <p className="text-xl font-bold text-[#E32636]">Bubly (PepsiCo)</p>
-                </div>
-                <div className="text-center p-4 bg-[#FFD700]/20 rounded-lg border border-[#FFD700]/40">
-                  <p className="text-sm text-muted-foreground mb-1">Agency</p>
-                  <p className="text-sm font-bold text-[#E32636]">Goodby Silverstein & Partners</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Agency / Creative Team */}
-        <section className="mb-16">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="h-7 w-7 text-[#E32636]" />
-                <CardTitle className="text-2xl md:text-3xl">Agency / Creative Team</CardTitle>
-              </div>
-              <p className="text-muted-foreground text-base md:text-lg">Goodby Silverstein & Partners (San Francisco, USA)</p>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Brand</span>
-                    <span className="text-right text-sm md:text-base">Bubly (PepsiCo)</span>
-                  </div>
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Lead Writer</span>
-                    <span className="text-right text-sm md:text-base">Ken "Spanky" Moskowitz</span>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-semibold text-sm md:text-base">Agency</span>
-                    <span className="text-right text-sm md:text-base">Goodby Silverstein & Partners</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
-    </div>
+    <CommercialPage
+      heroImage="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&q=80"
+      badge="Super Bowl LIII · February 3, 2019 · Funniest Ad of 2019"
+      title="Bubly: Bublé vs. Bubly"
+      subtitle="Complete Production Credits"
+      description='Singer Michael Bublé insists on pronouncing the sparkling water brand "Bubly" as "Bublé" — even after a customer and a clerk correct him. A comedic battle of names that delighted Super Bowl audiences.'
+      kenRole="Lead Writer"
+      kenDescription="Ken 'Spanky' Moskowitz served as Lead Writer on PepsiCo's Bubly debut Super Bowl commercial, crafting the sharp comedic premise and wordplay that made the Michael Bublé name-confusion concept one of the funniest ads of Super Bowl LIII."
+      kenAchievement="One of the most-talked-about comedic Super Bowl ads of 2019 — a perfect showcase of Ken's wit and wordplay expertise"
+      youtubeId="rrk6QQfAZpc"
+      youtubeTitle='Bubly "Bublé vs. Bubly" Super Bowl LIII 2019 Commercial'
+      airDate="Feb 3, 2019"
+      superBowl="Super Bowl LIII"
+      achievement="Funniest Ad 2019"
+      overviewParagraphs={[
+        "At a store, singer Michael Bublé insists on pronouncing the name of the sparkling water brand Bubly as 'Bublé' — even after another customer and a store clerk (whom Bublé refers to as 'Davé') correct him. The ad plays on the near-identical pronunciation of the singer's name and the brand name.",
+        "The commercial was PepsiCo's debut Super Bowl spot for Bubly, their sparkling water brand. It was a massive success, introducing the brand to a national audience with humor and the star power of Michael Bublé.",
+        "The ad's clever wordplay and Bublé's self-deprecating performance made it one of the most memorable and shared commercials from Super Bowl LIII, earning widespread praise from advertising critics and audiences alike.",
+      ]}
+      creditSections={[
+        {
+          title: "Brand / Client",
+          subtitle: "PepsiCo / Bubly",
+          credits: [
+            { role: "Brand", name: "Bubly (PepsiCo)" },
+            { role: "Chief Marketing Officer", name: "Todd Kaplan" },
+            { role: "VP, Marketing", name: "Stacy Taffet" },
+          ],
+        },
+        {
+          title: "Agency / Creative Team",
+          subtitle: "Goodby Silverstein & Partners",
+          credits: [
+            { role: "Agency", name: "Goodby Silverstein & Partners" },
+            { role: "Lead Writer", name: 'Ken "Spanky" Moskowitz', highlight: true },
+            { role: "Chief Creative Officer", name: "Margaret Johnson" },
+            { role: "Executive Creative Director", name: "Keith Anderson" },
+            { role: "Creative Director", name: "Tristan Graham" },
+            { role: "Art Director", name: "Niklas Lilja" },
+            { role: "Executive Producer", name: "Hilary Coate" },
+          ],
+        },
+        {
+          title: "Production",
+          subtitle: "Hungry Man Productions",
+          credits: [
+            { role: "Production Company", name: "Hungry Man Productions" },
+            { role: "Director", name: "Wayne McClammy" },
+            { role: "Executive Producer", name: "Mino Jarjoura" },
+            { role: "Producer", name: "Rachel Curl" },
+            { role: "Director of Photography", name: "Darko Suvak" },
+          ],
+        },
+        {
+          title: "Post-Production / Editorial",
+          subtitle: "Cosmo Street Editorial",
+          credits: [
+            { role: "Editorial Company", name: "Cosmo Street Editorial" },
+            { role: "Editor", name: "Tom Scherma" },
+            { role: "Executive Producer", name: "Yvette Cobarrubias" },
+            { role: "Color", name: "Company 3" },
+          ],
+        },
+        {
+          title: "Featured Talent",
+          subtitle: "On-Screen Performers",
+          credits: [
+            { role: "Himself", name: "Michael Bublé" },
+            { role: "Store Clerk 'Davé'", name: "Featured Actor" },
+          ],
+        },
+      ]}
+      relatedLinks={relatedLinks}
+      schemaVideoId="rrk6QQfAZpc"
+      schemaUploadDate="2019-02-03"
+      schemaBreadcrumb="Bubly: Bublé vs. Bubly '19"
+      schemaUrl="https://greatestsuperbowlads.com/bubly-buble"
+    />
   );
 }
