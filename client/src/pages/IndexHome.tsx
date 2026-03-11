@@ -1,312 +1,295 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+/**
+ * IndexHome — Portfolio Index Page
+ * Design: Editorial prestige — Variety/Ad Age/IMDb style.
+ * Cream background, Playfair Display serif, Budweiser red accents, no cards.
+ */
+
 import Navigation from "@/components/Navigation";
-import { Badge } from "@/components/ui/badge";
-import { Award, TrendingUp, Film, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from "react";
+
+const C = {
+  cream: "#F8F5F0",
+  parchment: "#EDE9E1",
+  charcoal: "#1A1A1A",
+  ink: "#2C2C2C",
+  slate: "#5A5A5A",
+  rule: "#D4CFC7",
+  red: "#C8102E",
+  gold: "#B8960C",
+  white: "#FFFFFF",
+  navBg: "#14100C",
+};
+
+const serif = "'Playfair Display', Georgia, serif";
+const sans = "'Source Sans 3', 'Source Sans Pro', sans-serif";
+
+const commercials = [
+  { year: "2026", brand: "Budweiser", title: "American Icons", tagline: "The Clydesdale and the Eagle — A Story of American Resilience", kenRole: "Writer", superBowl: "Super Bowl LX", achievement: "10th Super Bowl", path: "/budweiser-american-icons" },
+  { year: "2024", brand: "State Farm", title: "Agent State Farm", tagline: 'Arnold can\'t say "neighbor." Danny DeVito saves the day.', kenRole: "Contributing Writer", superBowl: "Super Bowl LVIII", achievement: "#1 USA Today Ad Meter", path: "/state-farm-agent" },
+  { year: "2024", brand: "Etsy", title: "Thank You, France", tagline: "America thanks France for the Statue of Liberty — with cheese.", kenRole: "Creative Writing Consultant", superBowl: "Super Bowl LVIII", achievement: "Viral Sensation", path: "/etsy-thank-you-france" },
+  { year: "2022", brand: "Budweiser", title: "A Clydesdale's Journey", tagline: "An injured Clydesdale finds friendship and the will to recover.", kenRole: "Lead Writer", superBowl: "Super Bowl LVI", achievement: "Top 5 Ad Meter", path: "/budweiser-clydesdales-journey" },
+  { year: "2019", brand: "Bubly", title: "Bublé vs. Bubly", tagline: 'Singer Michael Bublé insists on pronouncing Bubly as "Bublé."', kenRole: "Contributing Writer", superBowl: "Super Bowl LIII", achievement: "Top 10 Ad Meter", path: "/bubly-buble" },
+  { year: "2017", brand: "T-Mobile", title: "#BagOfUnlimited", tagline: "Martha Stewart and Snoop Dogg explain unlimited data with cannabis puns.", kenRole: "Lead Writer", superBowl: "Super Bowl LI", achievement: "Most Shared 2017", path: "/tmobile-bag-of-unlimited" },
+  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog" },
+  { year: "2012", brand: "M&M's", title: "Just My Shell", tagline: 'A brown M&M is mistaken for naked. Red tears off his shell to "Sexy and I Know It."', kenRole: "Contributing Writer", superBowl: "Super Bowl XLVI", achievement: "Top 5 Ad Meter", path: "/mms-just-my-shell" },
+  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force" },
+  { year: "2010", brand: "Bud Light", title: "T-Pain Voice", tagline: "Men who hear about a Bud Light party talk like T-Pain. Then T-Pain shows up.", kenRole: "Lead Writer", superBowl: "Super Bowl XLIV", achievement: "Most Memorable 2010", path: "/bud-light-tpain" },
+];
+
+function RedRule() {
+  return <div style={{ width: "100%", height: "3px", backgroundColor: C.red }} />;
+}
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: C.red }}>
+      {children}
+    </span>
+  );
+}
 
 export default function IndexHome() {
-  const commercials = [
-    {
-      title: "Budweiser: American Icons",
-      year: "2026",
-      superbowl: "Super Bowl LX",
-      path: "/budweiser-american-icons",
-      role: "Writer",
-      achievement: "10th Super Bowl",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663141268147/CjuYXCgkmLCrJyNd.jpg",
-      description: "Clydesdale and eagle celebrate 150 years of Budweiser and American icons",
-    },
-    {
-      title: "State Farm: Agent State Farm",
-      year: "2024",
-      superbowl: "Super Bowl LVIII",
-      path: "/state-farm-agent",
-      role: "Senior Copywriter",
-      achievement: "#1 USA Today Ad Meter",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
-      description: "Arnold Schwarzenegger struggles with 'neighbor,' Danny DeVito saves the day",
-    },
-    {
-      title: "Etsy: Thank You, France",
-      year: "2024",
-      superbowl: "Super Bowl LVIII",
-      path: "/etsy-thank-you-france",
-      role: "Creative Writing Consultant",
-      achievement: "Etsy's 1st Super Bowl",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663141268147/wDgpfeikURjrzeeq.jpg",
-      description: "Americans realize they need to thank France for the Statue of Liberty with cheese",
-    },
-    {
-      title: "Budweiser: A Clydesdale's Journey",
-      year: "2022",
-      superbowl: "Super Bowl LVI",
-      path: "/budweiser-clydesdales-journey",
-      role: "Contributing Writer",
-      achievement: "Directed by Chloé Zhao",
-      image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&q=80",
-      description: "Injured Clydesdale befriends dog during rehab in powerful comeback commercial",
-    },
-    {
-      title: "Bubly: Bublé vs. Bubly",
-      year: "2019",
-      superbowl: "Super Bowl LIII",
-      path: "/bubly-buble",
-      role: "Lead Writer",
-      achievement: "Funniest Ad 2019",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80",
-      description: "Michael Bublé insists on pronouncing Bubly as 'Bublé' in hilarious debut",
-    },
-    {
-      title: "T-Mobile: #BagOfUnlimited",
-      year: "2017",
-      superbowl: "Super Bowl LI",
-      path: "/tmobile-bag-of-unlimited",
-      role: "Senior Copywriter",
-      achievement: "Martha & Snoop",
-      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80",
-      description: "Martha Stewart and Snoop Dogg crack weed jokes promoting unlimited data",
-    },
-    {
-      title: "Budweiser: Lost Dog",
-      year: "2015",
-      superbowl: "Super Bowl XLIX",
-      path: "/budweiser-lost-dog",
-      role: "Contributing Writer",
-      achievement: "Emotional Classic",
-      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80",
-      description: "Yellow Labrador gets lost and finds his way home with Clydesdales' help",
-    },
-    {
-      title: "M&M's: Just My Shell",
-      year: "2012",
-      superbowl: "Super Bowl XLVI",
-      path: "/mms-just-my-shell",
-      role: "Lead Writer",
-      achievement: "LMFAO Soundtrack",
-      image: "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=800&q=80",
-      description: "Red M&M tears off shell and dances to 'Sexy and I Know It'",
-    },
-    {
-      title: "Volkswagen: The Force",
-      year: "2011",
-      superbowl: "Super Bowl XLV",
-      path: "/volkswagen-the-force",
-      role: "Contributing Writer",
-      achievement: "#9 YouTube Top 10 2011",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-      description: "Kid dressed as Darth Vader tries the Force on his dad's Volkswagen",
-    },
-    {
-      title: "Bud Light: T-Pain Voice",
-      year: "2010",
-      superbowl: "Super Bowl XLIV",
-      path: "/bud-light-tpain",
-      role: "Senior Copywriter",
-      achievement: "T-Pain Cameo",
-      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80",
-      description: "Men start talking like T-Pain after hearing about Bud Light party",
-    },
-  ];
+  useEffect(() => {
+    document.title = 'Ken "Spanky" Moskowitz — Super Bowl Portfolio | 10 Iconic Commercials (2010–2026)';
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div style={{ backgroundColor: C.cream, minHeight: "100vh" }}>
       <Navigation />
-      
-      {/* Hero Section with Montage Background */}
-      <header className="relative overflow-hidden py-20 md:py-32 text-white">
-        {/* Background Montage Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://private-us-east-1.manuscdn.com/sessionFile/74D4rY78UoLus5hZrYfUHa/sandbox/g4IWIO5CX5FRx9WYV1PQ8g-img-1_1770611755000_na1fn_aGVyby1tb250YWdlLXN1cGVyYm93bC1hZHM.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvNzRENHJZNzhVb0x1czVoWnJZZlVIYS9zYW5kYm94L2c0SVdJTzVDWDVGUng5V1lWMVBROGctaW1nLTFfMTc3MDYxMTc1NTAwMF9uYTFmbl9hR1Z5YnkxdGIyNTBZV2RsTFhOMWNHVnlZbTkzYkMxaFpITS5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V-M9cRytr518LSBpmb~ZwGii91zHUYQkWYNiHE3gHTS7Cm52FghVaWVKf5KNjvN8dlnwCgjoOcrSPLY7F0~jWoA5UQEnfqG9ipeDTis85~IytsBwT3V9EVlch0qhmLRmDYU-L-Zw873PC1UjSrEkrYJcVZ3fF7dD7WNTU9IQxz3T3Qc7eOlM-G70Ds4PmTCFrKn2RaMg4lCdOrHAP4nu6i7ifS4UHIPhgCHoR~DSnfmTFUt9dTHM7nzQI7XGU~kMvGYqq9QGAK9I0qa8EmVYmhwMp15MEneYFvBzxlJb5bhERZZztwQz8scosv2CTiln-l05dEnOi-NIQ43uXIB34A__')"
-          }}
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#E32636]/85 via-[#C41E3A]/80 to-[#8B0000]/85" />
-        <div className="container relative z-10">
-          <div className="max-w-5xl mx-auto text-center space-y-8">
-            <div className="flex justify-center">
-              <Badge variant="secondary" className="text-lg px-6 py-2 bg-[#FFD700] text-[#E32636] font-bold border-2 border-white">
-                10 Super Bowl Commercials • 2010-2026
-              </Badge>
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight">
-              Ken "Spanky" Moskowitz
-            </h1>
-            <p className="text-2xl md:text-3xl font-semibold text-[#FFD700]">
-              Super Bowl Portfolio
-            </p>
-            <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto leading-relaxed">
-              Explore the complete production credits for 10 iconic Super Bowl commercials spanning 16 years, featuring work with Budweiser, State Farm, Etsy, Volkswagen, M&M's, T-Mobile, and more.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
-                <p className="text-sm text-white/80">Total Commercials</p>
-                <p className="text-3xl font-bold text-[#FFD700]">10</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
-                <p className="text-sm text-white/80">Years</p>
-                <p className="text-3xl font-bold text-[#FFD700]">2010-2026</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
-                <p className="text-sm text-white/80">Brands</p>
-                <p className="text-3xl font-bold text-[#FFD700]">8</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
 
-      {/* About Section */}
-      <section className="container py-16 md:py-20">
-        <Card className="shadow-2xl border-[#E32636]/20">
-          <CardHeader className="bg-gradient-to-r from-[#E32636]/10 to-[#FFD700]/5">
-            <div className="flex items-center gap-3 mb-2">
-              <Award className="h-8 w-8 text-[#E32636]" />
-              <CardTitle className="text-3xl md:text-4xl">About Ken "Spanky" Moskowitz</CardTitle>
-            </div>
-          </CardHeader>
-          <CardContent className="pt-8">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg leading-relaxed mb-4">
-                Ken "Spanky" Moskowitz is a veteran advertising creative with an extraordinary track record of Super Bowl success. Over 16 years, he has contributed his writing expertise to 10 Super Bowl commercials, working with some of America's most iconic brands and helping create ads that have become cultural touchstones.
-              </p>
-              <p className="text-lg leading-relaxed mb-4">
-                His work spans multiple roles—from Lead Writer to Senior Copywriter to Creative Writing Consultant—showcasing his versatility and deep understanding of what makes a Super Bowl commercial resonate with millions of viewers. Ken's commercials have topped USA Today's Ad Meter, ranked on YouTube's Top 10 Videos, and been celebrated for their humor, heart, and cultural impact.
-              </p>
-              <p className="text-lg leading-relaxed">
-                As <strong>Founder</strong> of <a href="https://www.adzombies.com" target="_blank" rel="noopener noreferrer" className="text-[#E32636] font-semibold hover:underline">Ad Zombies</a> and <strong>Founder</strong> of Wedgie Creative, Ken is also a <strong>Featured Keynote Speaker</strong>, <strong>Fractional CMO</strong> for several companies, and <strong>Advertising Consultant</strong> for some of the world's biggest brands. He continues to bring his sharp wit and storytelling prowess to brands looking to make an impact on advertising's biggest stage.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
+      {/* ── HERO ──────────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "80vh",
+          display: "flex",
+          alignItems: "flex-end",
+          backgroundImage: "url(https://private-us-east-1.manuscdn.com/sessionFile/74D4rY78UoLus5hZrYfUHa/sandbox/g4IWIO5CX5FRx9WYV1PQ8g-img-1_1770611755000_na1fn_aGVyby1tb250YWdlLXN1cGVyYm93bC1hZHM.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvNzRENHJZNzhVb0x1czVoWnJZZlVIYS9zYW5kYm94L2c0SVdJTzVDWDVGUng5V1lWMVBROGctaW1nLTFfMTc3MDYxMTc1NTAwMF9uYTFmbl9hR1Z5YnkxdGIyNTBZV2RsTFhOMWNHVnlZbTkzYkMxaFpITS5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V-M9cRytr518LSBpmb~ZwGii91zHUYQkWYNiHE3gHTS7Cm52FghVaWVKf5KNjvN8dlnwCgjoOcrSPLY7F0~jWoA5UQEnfqG9ipeDTis85~IytsBwT3V9EVlch0qhmLRmDYU-L-Zw873PC1UjSrEkrYJcVZ3fF7dD7WNTU9IQxz3T3Qc7eOlM-G70Ds4PmTCFrKn2RaMg4lCdOrHAP4nu6i7ifS4UHIPhgCHoR~DSnfmTFUt9dTHM7nzQI7XGU~kMvGYqq9QGAK9I0qa8EmVYmhwMp15MEneYFvBzxlJb5bhERZZztwQz8scosv2CTiln-l05dEnOi-NIQ43uXIB34A__)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.88) 100%)" }} />
 
-      {/* Quick Navigation with Descriptive Links */}
-      <section className="container py-12 bg-white/50 rounded-lg">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-6">Explore by Category</h2>
-          <div className="grid md:grid-cols-3 gap-4 text-center">
-            <Link href="/budweiser-american-icons" className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-[#E32636] mb-2">Latest: Budweiser 2026</h3>
-                <p className="text-sm text-gray-600">American Icons featuring Clydesdale and eagle</p>
-            </Link>
-            <Link href="/state-farm-agent" className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-[#E32636] mb-2">#1 Ad Meter Winner</h3>
-                <p className="text-sm text-gray-600">State Farm with Arnold Schwarzenegger</p>
-            </Link>
-            <Link href="/volkswagen-the-force" className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-[#E32636] mb-2">Viral Sensation</h3>
-                <p className="text-sm text-gray-600">Volkswagen The Force - #9 YouTube Top 10</p>
-            </Link>
+        <div className="container" style={{ position: "relative", zIndex: 1, paddingBottom: "4rem", paddingTop: "2rem" }}>
+          <div style={{ marginBottom: "1rem" }}>
+            <span style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C.red, backgroundColor: "rgba(255,255,255,0.95)", padding: "0.3rem 0.75rem", display: "inline-block" }}>
+              Official Production Credits Portfolio
+            </span>
           </div>
-        </div>
-      </section>
 
-      {/* Commercials Grid */}
-      <section className="container py-16 md:py-20">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Film className="h-10 w-10 text-[#E32636]" />
-            <h2 className="text-4xl md:text-5xl font-bold">Complete Portfolio</h2>
-          </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Click any commercial to view complete production credits, watch the ad, and explore behind-the-scenes details
+          <h1 style={{ fontFamily: serif, fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 900, color: "#FFFFFF", lineHeight: 1.0, marginBottom: "0.5rem", textShadow: "0 2px 16px rgba(0,0,0,0.5)" }}>
+            Ken <em>"Spanky"</em>
+            <br />
+            Moskowitz
+          </h1>
+          <div style={{ width: "80px", height: "3px", backgroundColor: C.red, marginBottom: "1.25rem" }} />
+
+          <p style={{ fontFamily: sans, fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)", fontWeight: 300, color: "rgba(255,255,255,0.85)", maxWidth: "600px", lineHeight: 1.7, marginBottom: "2rem" }}>
+            Ten iconic Super Bowl commercials spanning 16 years — Budweiser, State Farm, Etsy, Volkswagen, M&M's, T-Mobile, Bubly, and Bud Light. Writer, Contributing Writer, and Creative Writing Consultant on some of the most-watched ads in Super Bowl history.
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {commercials.map((commercial, index) => (
-            <Link key={index} href={commercial.path} className="group block">
-                <Card className="shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-[#E32636]/30 h-full">
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={commercial.image} 
-                      alt={commercial.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-[#E32636] text-white font-bold">
-                        {commercial.year}
-                      </Badge>
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white font-semibold text-sm">{commercial.superbowl}</p>
-                    </div>
+          <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
+            {[
+              { num: "10", label: "Super Bowl Commercials" },
+              { num: "16", label: "Years (2010–2026)" },
+              { num: "3×", label: "Ad Meter Top Wins" },
+              { num: "8", label: "Iconic Brands" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div style={{ fontFamily: serif, fontSize: "2rem", fontWeight: 900, color: "#FFFFFF", lineHeight: 1 }}>{stat.num}</div>
+                <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: C.gold, marginTop: "4px" }}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <RedRule />
+
+      {/* ── KEN BIO ───────────────────────────────────────────────────────── */}
+      <section style={{ backgroundColor: C.white }}>
+        <div className="container" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
+          <SectionLabel>About the Writer</SectionLabel>
+          <h2 style={{ fontFamily: serif, fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 900, color: C.charcoal, marginTop: "0.75rem", marginBottom: "0.25rem", lineHeight: 1.1 }}>
+            The Man Behind the Words
+          </h2>
+          <div style={{ width: "48px", height: "2px", backgroundColor: C.red, marginBottom: "1.5rem" }} />
+
+          <div style={{ borderLeft: `4px solid ${C.gold}`, paddingLeft: "1.75rem", maxWidth: "820px" }}>
+            <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.25rem" }}>
+              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning 16 years. As <strong>Founder of Ad Zombies</strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
+            </p>
+            <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.5rem" }}>
+              A <strong>Featured Keynote Speaker</strong>, <strong>Fractional CMO</strong> for several companies, and <strong>Advertising Consultant</strong> for some of the world's biggest brands, Ken brings a rare combination of creative brilliance and strategic business acumen to every project he touches.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+              {["Founder, Ad Zombies", "Founder, Wedgie Creative", "Featured Keynote Speaker", "Fractional CMO", "Advertising Consultant"].map((cred) => (
+                <span key={cred} style={{ fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.slate, border: `1px solid ${C.rule}`, padding: "0.3rem 0.65rem", backgroundColor: C.cream }}>
+                  {cred}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <RedRule />
+
+      {/* ── COMMERCIAL PORTFOLIO TABLE ────────────────────────────────────── */}
+      <section style={{ backgroundColor: C.cream }}>
+        <div className="container" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
+          <SectionLabel>Complete Portfolio</SectionLabel>
+          <h2 style={{ fontFamily: serif, fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 900, color: C.charcoal, marginTop: "0.75rem", marginBottom: "0.5rem", lineHeight: 1.1 }}>
+            10 Super Bowl Commercials
+          </h2>
+          <p style={{ fontFamily: sans, fontSize: "0.9rem", fontWeight: 400, color: C.slate, marginBottom: "2.5rem", fontStyle: "italic" }}>
+            2010 – 2026 · Click any commercial to view complete production credits
+          </p>
+
+          {/* Desktop table */}
+          <div className="hidden md:block">
+            <div style={{ borderBottom: `3px solid ${C.charcoal}`, paddingBottom: "0.5rem", display: "grid", gridTemplateColumns: "72px 130px 1fr 180px", gap: "0", marginBottom: "0" }}>
+              {["Year", "Brand", "Commercial", "Ken's Role"].map((h) => (
+                <span key={h} style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.slate }}>
+                  {h}
+                </span>
+              ))}
+            </div>
+
+            {commercials.map((c, i) => (
+              <Link key={c.path} href={c.path} style={{ textDecoration: "none", display: "block" }}>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "72px 130px 1fr 180px",
+                    gap: "0",
+                    padding: "1.25rem 0",
+                    borderBottom: `1px solid ${C.rule}`,
+                    backgroundColor: i % 2 === 0 ? "transparent" : C.white,
+                    cursor: "pointer",
+                    transition: "background-color 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = C.parchment; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = i % 2 === 0 ? "transparent" : C.white; }}
+                >
+                  <span style={{ fontFamily: serif, fontSize: "1.15rem", fontWeight: 700, color: C.red, alignSelf: "center" }}>{c.year}</span>
+                  <span style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.06em", alignSelf: "center", paddingRight: "1rem" }}>{c.brand}</span>
+                  <div style={{ alignSelf: "center", paddingRight: "1rem" }}>
+                    <div style={{ fontFamily: serif, fontSize: "1.05rem", fontWeight: 700, color: C.charcoal }}>{c.title}</div>
+                    <div style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 300, color: C.slate, marginTop: "2px", fontStyle: "italic" }}>{c.tagline}</div>
+                    {c.achievement && (
+                      <div style={{ fontFamily: sans, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: C.gold, marginTop: "4px" }}>{c.achievement}</div>
+                    )}
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl group-hover:text-[#E32636] transition-colors">
-                      {commercial.title}
-                    </CardTitle>
-                    <div className="flex items-center gap-2 text-sm">
-                      <Badge variant="outline" className="border-[#E32636] text-[#E32636]">
-                        {commercial.role}
-                      </Badge>
-                      <Badge variant="secondary" className="bg-[#FFD700]/20 text-[#E32636]">
-                        {commercial.achievement}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {commercial.description}
-                    </p>
-                    <div className="flex items-center text-[#E32636] font-semibold text-sm group-hover:gap-2 transition-all">
-                      View Credits
-                      <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </CardContent>
-                </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-gradient-to-br from-[#E32636] to-[#8B0000] py-16 md:py-20 text-white">
-        <div className="container">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <TrendingUp className="h-10 w-10 text-[#FFD700]" />
-              <h2 className="text-4xl md:text-5xl font-bold">Portfolio Highlights</h2>
-            </div>
+                  <div style={{ alignSelf: "center" }}>
+                    <span style={{ fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.red, border: `1px solid ${C.red}`, padding: "0.2rem 0.5rem", display: "inline-block" }}>
+                      {c.kenRole}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
-              <p className="text-6xl font-bold text-[#FFD700] mb-2">10</p>
-              <p className="text-lg text-white/90">Super Bowl Commercials</p>
-            </div>
-            <div className="text-center">
-              <p className="text-6xl font-bold text-[#FFD700] mb-2">16</p>
-              <p className="text-lg text-white/90">Years of Experience</p>
-            </div>
-            <div className="text-center">
-              <p className="text-6xl font-bold text-[#FFD700] mb-2">8</p>
-              <p className="text-lg text-white/90">Major Brands</p>
-            </div>
-            <div className="text-center">
-              <p className="text-6xl font-bold text-[#FFD700] mb-2">#1</p>
-              <p className="text-lg text-white/90">Ad Meter Winner</p>
-            </div>
+
+          {/* Mobile list */}
+          <div className="md:hidden">
+            {commercials.map((c) => (
+              <Link key={c.path} href={c.path} style={{ textDecoration: "none", display: "block" }}>
+                <div style={{ borderBottom: `1px solid ${C.rule}`, padding: "1.5rem 0" }}>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "0.75rem", marginBottom: "0.4rem" }}>
+                    <span style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.red }}>{c.year}</span>
+                    <span style={{ fontFamily: sans, fontSize: "0.7rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.08em" }}>{c.brand}</span>
+                  </div>
+                  <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.charcoal, marginBottom: "0.25rem" }}>{c.title}</div>
+                  <div style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 300, color: C.slate, fontStyle: "italic", marginBottom: "0.5rem" }}>{c.tagline}</div>
+                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
+                    <span style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.red, border: `1px solid ${C.red}`, padding: "0.2rem 0.5rem" }}>
+                      {c.kenRole}
+                    </span>
+                    {c.achievement && (
+                      <span style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.gold }}>
+                        {c.achievement}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container text-center">
-          <p className="text-lg mb-4">
-            <strong>Ken "Spanky" Moskowitz</strong> • Super Bowl Portfolio
-          </p>
-          <p className="text-sm text-gray-400 mb-4">
-            Founder of <a href="https://www.adzombies.com" target="_blank" rel="noopener noreferrer" className="text-[#FFD700] hover:underline">Ad Zombies</a> • Founder of Wedgie Creative<br />
-            Featured Keynote Speaker • Fractional CMO • Advertising Consultant
-          </p>
-          <p className="text-xs text-gray-500">
-            © 2026 All Rights Reserved • Complete Production Credits for 10 Super Bowl Commercials
-          </p>
+      <RedRule />
+
+      {/* ── BRAND EXPLORER ───────────────────────────────────────────────── */}
+      <section style={{ backgroundColor: C.parchment }}>
+        <div className="container" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
+          <SectionLabel>Explore by Brand</SectionLabel>
+          <h2 style={{ fontFamily: serif, fontSize: "1.5rem", fontWeight: 700, color: C.charcoal, marginTop: "0.75rem", marginBottom: "1.5rem" }}>
+            Ken Moskowitz's Super Bowl Work by Brand
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "0" }}>
+            {[
+              { brand: "Budweiser", ads: ["American Icons (2026)", "A Clydesdale's Journey (2022)", "Lost Dog (2015)"], path: "/budweiser-american-icons" },
+              { brand: "State Farm", ads: ["Agent State Farm (2024) — #1 Ad Meter"], path: "/state-farm-agent" },
+              { brand: "Etsy", ads: ["Thank You, France (2024)"], path: "/etsy-thank-you-france" },
+              { brand: "Bubly", ads: ["Bublé vs. Bubly (2019)"], path: "/bubly-buble" },
+              { brand: "T-Mobile", ads: ["#BagOfUnlimited (2017)"], path: "/tmobile-bag-of-unlimited" },
+              { brand: "M&M's", ads: ["Just My Shell (2012)"], path: "/mms-just-my-shell" },
+              { brand: "Volkswagen", ads: ["The Force (2011) — #9 YouTube Top 10"], path: "/volkswagen-the-force" },
+              { brand: "Bud Light", ads: ["T-Pain Voice (2010)"], path: "/bud-light-tpain" },
+            ].map((brand) => (
+              <Link key={brand.path} href={brand.path} style={{ textDecoration: "none", display: "block", padding: "1.5rem", borderRight: `1px solid ${C.rule}`, borderBottom: `1px solid ${C.rule}` }}>
+                <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.charcoal, marginBottom: "0.5rem" }}>{brand.brand}</div>
+                {brand.ads.map((ad) => (
+                  <div key={ad} style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 400, color: C.slate, marginBottom: "0.2rem" }}>→ {ad}</div>
+                ))}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <RedRule />
+
+      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
+      <footer style={{ backgroundColor: "#0D0A08", borderTop: `3px solid ${C.red}` }}>
+        <div className="container" style={{ paddingTop: "2.5rem", paddingBottom: "2.5rem", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-start", gap: "2rem" }}>
+          <div>
+            <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: "#F8F5F0", marginBottom: "0.5rem" }}>
+              Ken <span style={{ color: C.red }}>"Spanky"</span> Moskowitz
+            </div>
+            <div style={{ fontFamily: sans, fontSize: "0.72rem", fontWeight: 400, color: "#7A7268", lineHeight: 1.7 }}>
+              Founder, Ad Zombies · Founder, Wedgie Creative<br />
+              Featured Keynote Speaker · Fractional CMO · Advertising Consultant
+            </div>
+          </div>
+          <div>
+            <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>Portfolio</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+              {commercials.slice(0, 5).map((c) => (
+                <Link key={c.path} href={c.path} style={{ fontFamily: sans, fontSize: "0.75rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>
+                  {c.year} — {c.brand}: {c.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>More</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+              {commercials.slice(5).map((c) => (
+                <Link key={c.path} href={c.path} style={{ fontFamily: sans, fontSize: "0.75rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>
+                  {c.year} — {c.brand}: {c.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 400, color: "#5A5248", textAlign: "right", alignSelf: "flex-end" }}>
+            <div>10 Super Bowl Commercials · 2010–2026</div>
+            <div style={{ marginTop: "4px" }}>greatestsuperbowlads.com</div>
+          </div>
         </div>
       </footer>
     </div>

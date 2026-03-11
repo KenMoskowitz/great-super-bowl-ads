@@ -1,3 +1,39 @@
+/**
+ * DESIGN SYSTEM: Prestige Editorial
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Philosophy: Variety magazine meets IMDb credits meets Ad Age editorial.
+ *   Authority through restraint. Serif headlines command attention.
+ *   Cream/off-white backgrounds feel like premium print. Budweiser red
+ *   is used sparingly — only for accents, dividers, and key labels.
+ *   Hero images remain cinematic and full-bleed. Below the fold: clean,
+ *   structured, highly readable, Google-indexable editorial content.
+ *
+ * Color Palette:
+ *   --cream:       #F8F5F0  (primary background — warm off-white)
+ *   --parchment:   #EDE9E1  (secondary background — section alternation)
+ *   --charcoal:    #1A1A1A  (primary text — near black, not pure black)
+ *   --ink:         #2C2C2C  (body text)
+ *   --slate:       #5A5A5A  (secondary text, captions)
+ *   --rule:        #D4CFC7  (dividers, borders)
+ *   --red:         #C8102E  (Budweiser red — accents only)
+ *   --gold:        #B8960C  (Ken Moskowitz highlight — muted gold)
+ *   --white:       #FFFFFF
+ *
+ * Typography:
+ *   Headlines:  'Playfair Display' (serif) — weight 700/900
+ *   Subheads:   'Playfair Display' (serif) — weight 400 italic
+ *   Body/UI:    'Source Sans 3' (humanist sans) — weight 400/600
+ *   Credits:    'Source Sans 3' — weight 400, tracked
+ *   Labels:     'Source Sans 3' — weight 700, uppercase, tracked
+ *
+ * Layout:
+ *   Max content width: 1100px
+ *   Section padding: 4rem vertical
+ *   Credit rows: two-column table (role left, name right)
+ *   No cards — full-width sections separated by 1px rules
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -40,80 +76,55 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
 }
 
 :root {
-  /* Budweiser Red & Gold Theme */
-  --primary: oklch(0.52 0.22 25); /* Budweiser Red #E32636 */
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.75 0.12 85); /* Gold accent */
-  --secondary-foreground: oklch(0.15 0.01 25);
-  --accent: oklch(0.75 0.12 85); /* Gold */
-  --accent-foreground: oklch(0.15 0.01 25);
-  --sidebar-primary: oklch(0.52 0.22 25);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --chart-1: oklch(0.52 0.22 25);
-  --chart-2: oklch(0.75 0.12 85);
-  --chart-3: oklch(0.35 0.05 25);
-  --chart-4: oklch(0.25 0.02 25);
-  --chart-5: oklch(0.15 0.01 25);
-  --radius: 0.35rem;
-  --background: oklch(0.98 0.005 25);
-  --foreground: oklch(0.15 0.01 25);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.01 25);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.01 25);
-  --muted: oklch(0.95 0.005 25);
-  --muted-foreground: oklch(0.45 0.01 25);
+  --radius: 0.25rem;
+
+  /* Editorial palette */
+  --cream: #F8F5F0;
+  --parchment: #EDE9E1;
+  --charcoal: #1A1A1A;
+  --ink: #2C2C2C;
+  --slate: #5A5A5A;
+  --rule: #D4CFC7;
+  --bud-red: #C8102E;
+  --muted-gold: #B8960C;
+  --white: #FFFFFF;
+
+  /* Tailwind/shadcn tokens mapped to editorial palette */
+  --background: oklch(0.978 0.006 75);       /* cream */
+  --foreground: oklch(0.13 0.005 60);        /* charcoal */
+  --card: oklch(0.978 0.006 75);
+  --card-foreground: oklch(0.13 0.005 60);
+  --popover: oklch(0.978 0.006 75);
+  --popover-foreground: oklch(0.13 0.005 60);
+  --primary: oklch(0.38 0.18 25);            /* Budweiser red */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.008 75);         /* parchment */
+  --secondary-foreground: oklch(0.2 0.005 60);
+  --muted: oklch(0.94 0.008 75);
+  --muted-foreground: oklch(0.45 0.01 60);   /* slate */
+  --accent: oklch(0.94 0.008 75);
+  --accent-foreground: oklch(0.13 0.005 60);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.88 0.01 25);
-  --input: oklch(0.88 0.01 25);
-  --ring: oklch(0.52 0.22 25);
-  --sidebar: oklch(0.98 0.005 25);
-  --sidebar-foreground: oklch(0.15 0.01 25);
-  --sidebar-accent: oklch(0.95 0.005 25);
-  --sidebar-accent-foreground: oklch(0.15 0.01 25);
-  --sidebar-border: oklch(0.88 0.01 25);
-  --sidebar-ring: oklch(0.52 0.22 25);
-}
-
-.dark {
-  --primary: oklch(0.58 0.22 25);
-  --primary-foreground: oklch(0.99 0 0);
-  --sidebar-primary: oklch(0.58 0.22 25);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --background: oklch(0.12 0.01 25);
-  --foreground: oklch(0.95 0.005 25);
-  --card: oklch(0.18 0.01 25);
-  --card-foreground: oklch(0.95 0.005 25);
-  --popover: oklch(0.18 0.01 25);
-  --popover-foreground: oklch(0.95 0.005 25);
-  --secondary: oklch(0.22 0.01 25);
-  --secondary-foreground: oklch(0.85 0.005 25);
-  --muted: oklch(0.25 0.01 25);
-  --muted-foreground: oklch(0.65 0.01 25);
-  --accent: oklch(0.75 0.12 85);
-  --accent-foreground: oklch(0.12 0.01 25);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.58 0.22 25);
-  --chart-1: oklch(0.58 0.22 25);
-  --chart-2: oklch(0.75 0.12 85);
-  --chart-3: oklch(0.45 0.08 25);
-  --chart-4: oklch(0.35 0.05 25);
-  --chart-5: oklch(0.25 0.02 25);
-  --sidebar: oklch(0.18 0.01 25);
-  --sidebar-foreground: oklch(0.95 0.005 25);
-  --sidebar-accent: oklch(0.25 0.01 25);
-  --sidebar-accent-foreground: oklch(0.95 0.005 25);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.58 0.22 25);
+  --border: oklch(0.87 0.01 75);             /* rule */
+  --input: oklch(0.87 0.01 75);
+  --ring: oklch(0.38 0.18 25);
+  --chart-1: oklch(0.38 0.18 25);
+  --chart-2: oklch(0.55 0.15 25);
+  --chart-3: oklch(0.65 0.12 75);
+  --chart-4: oklch(0.75 0.08 75);
+  --chart-5: oklch(0.85 0.04 75);
+  --sidebar: oklch(0.94 0.008 75);
+  --sidebar-foreground: oklch(0.13 0.005 60);
+  --sidebar-primary: oklch(0.38 0.18 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.94 0.008 75);
+  --sidebar-accent-foreground: oklch(0.13 0.005 60);
+  --sidebar-border: oklch(0.87 0.01 75);
+  --sidebar-ring: oklch(0.38 0.18 25);
 }
 
 @layer base {
@@ -122,10 +133,15 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
+    font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--charcoal);
+    line-height: 1.15;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -145,27 +161,120 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
-
   .flex {
     min-height: 0;
     min-width: 0;
   }
-
   @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
     .container {
       padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px;
     }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      max-width: 1100px;
+    }
+  }
+
+  /* ── Editorial utility classes ─────────────────────────────────────── */
+
+  /* Thick red rule divider — used between major sections */
+  .editorial-rule {
+    width: 100%;
+    height: 3px;
+    background-color: var(--bud-red);
+    margin: 0;
+  }
+
+  /* Thin grey rule — used between credit rows */
+  .credit-rule {
+    width: 100%;
+    height: 1px;
+    background-color: var(--rule);
+  }
+
+  /* Section label — uppercase tracked sans */
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bud-red);
+  }
+
+  /* Credit role cell */
+  .credit-role {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    min-width: 200px;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  /* Credit name cell */
+  .credit-name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  /* Ken Moskowitz highlighted credit name */
+  .credit-name-featured {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  /* Ken's featured block */
+  .ken-block {
+    border-left: 4px solid var(--muted-gold);
+    background-color: var(--white);
+    padding: 2rem 2.5rem;
+  }
+
+  /* Nav link */
+  .nav-link {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: color 0.15s ease;
+  }
+  .nav-link:hover {
+    color: var(--muted-gold);
+  }
+
+  /* Hero overlay — dark gradient for text readability over images */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.45) 50%,
+      rgba(0,0,0,0.70) 100%
+    );
+  }
+
+  /* Scroll-in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    animation: fadeUp 0.6s ease forwards;
   }
 }
