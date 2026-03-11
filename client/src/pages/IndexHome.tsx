@@ -1,7 +1,7 @@
 /**
  * IndexHome — Portfolio Index Page
  * Design: Editorial prestige — Variety/Ad Age/IMDb style.
- * Cream background, Playfair Display serif, Budweiser red accents, no cards.
+ * Cream background, Montserrat, Budweiser red accents, no cards.
  */
 
 import Navigation from "@/components/Navigation";
@@ -21,8 +21,9 @@ const C = {
   navBg: "#14100C",
 };
 
-const serif = "'Playfair Display', Georgia, serif";
-const sans = "'Source Sans 3', 'Source Sans Pro', sans-serif";
+const mono = "'Montserrat', system-ui, sans-serif";
+const serif = mono; // All fonts use Montserrat
+const sans = mono;
 
 const commercials = [
   { year: "2026", brand: "Budweiser", title: "American Icons", tagline: "The Clydesdale and the Eagle — A Story of American Resilience", kenRole: "Writer", superBowl: "Super Bowl LX", achievement: "10th Super Bowl", path: "/budweiser-american-icons" },
@@ -49,9 +50,14 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+const FIRST_YEAR = 2010;
+const currentYear = new Date().getFullYear();
+const yearSpan = currentYear - FIRST_YEAR;
+const yearRange = `${FIRST_YEAR}–${currentYear}`;
+
 export default function IndexHome() {
   useEffect(() => {
-    document.title = 'Ken "Spanky" Moskowitz — Super Bowl Portfolio | 10 Iconic Commercials (2010–2026)';
+    document.title = `Ken "Spanky" Moskowitz — Super Bowl Portfolio | 10 Iconic Commercials (${yearRange})`;
   }, []);
 
   return (
@@ -86,14 +92,14 @@ export default function IndexHome() {
           </h1>
           <div style={{ width: "80px", height: "3px", backgroundColor: C.red, marginBottom: "1.25rem" }} />
 
-          <p style={{ fontFamily: sans, fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)", fontWeight: 300, color: "rgba(255,255,255,0.85)", maxWidth: "600px", lineHeight: 1.7, marginBottom: "2rem" }}>
-            Ten iconic Super Bowl commercials spanning 16 years — Budweiser, State Farm, Etsy, Volkswagen, M&M's, T-Mobile, Bubly, and Bud Light. Writer, Contributing Writer, and Creative Writing Consultant on some of the most-watched ads in Super Bowl history.
+          <p style={{ fontFamily: sans, fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)", fontWeight: 400, color: "rgba(255,255,255,0.92)", maxWidth: "600px", lineHeight: 1.7, marginBottom: "2rem" }}>
+            Ten iconic Super Bowl commercials spanning {yearSpan} years — Budweiser, State Farm, Etsy, Volkswagen, M&M's, T-Mobile, Bubly, and Bud Light. Writer, Contributing Writer, and Creative Writing Consultant on some of the most-watched ads in Super Bowl history.
           </p>
 
           <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
             {[
               { num: "10", label: "Super Bowl Commercials" },
-              { num: "16", label: "Years (2010–2026)" },
+              { num: `${yearSpan}`, label: `Years (${yearRange})` },
               { num: "3×", label: "Ad Meter Top Wins" },
               { num: "8", label: "Iconic Brands" },
             ].map((stat) => (
@@ -119,7 +125,7 @@ export default function IndexHome() {
 
           <div style={{ borderLeft: `4px solid ${C.gold}`, paddingLeft: "1.75rem", maxWidth: "820px" }}>
             <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.25rem" }}>
-              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning 16 years. As <strong>Founder of Ad Zombies</strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
+              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning {yearSpan} years. As <strong>Founder of Ad Zombies</strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
             </p>
             <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.5rem" }}>
               A <strong>Featured Keynote Speaker</strong>, <strong>Fractional CMO</strong> for several companies, and <strong>Advertising Consultant</strong> for some of the world's biggest brands, Ken brings a rare combination of creative brilliance and strategic business acumen to every project he touches.
@@ -178,7 +184,7 @@ export default function IndexHome() {
                   <span style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.06em", alignSelf: "center", paddingRight: "1rem" }}>{c.brand}</span>
                   <div style={{ alignSelf: "center", paddingRight: "1rem" }}>
                     <div style={{ fontFamily: serif, fontSize: "1.05rem", fontWeight: 700, color: C.charcoal }}>{c.title}</div>
-                    <div style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 300, color: C.slate, marginTop: "2px", fontStyle: "italic" }}>{c.tagline}</div>
+                    <p style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 600, color: C.ink, marginTop: "3px" }}>{c.tagline}</p>
                     {c.achievement && (
                       <div style={{ fontFamily: sans, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: C.gold, marginTop: "4px" }}>{c.achievement}</div>
                     )}
@@ -203,7 +209,7 @@ export default function IndexHome() {
                     <span style={{ fontFamily: sans, fontSize: "0.7rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.08em" }}>{c.brand}</span>
                   </div>
                   <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.charcoal, marginBottom: "0.25rem" }}>{c.title}</div>
-                  <div style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 300, color: C.slate, fontStyle: "italic", marginBottom: "0.5rem" }}>{c.tagline}</div>
+                  <div style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 600, color: C.ink, marginBottom: "0.5rem" }}>{c.tagline}</div>
                   <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
                     <span style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.red, border: `1px solid ${C.red}`, padding: "0.2rem 0.5rem" }}>
                       {c.kenRole}

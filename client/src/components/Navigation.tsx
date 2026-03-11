@@ -1,8 +1,8 @@
 /**
  * Navigation — Editorial Prestige Style
  * ─────────────────────────────────────────────────────────────────────────────
- * Design: Deep charcoal (#14100C) bar with Playfair Display wordmark.
- * Source Sans 3 nav links. Budweiser red top accent line. Gold active state.
+ * Design: Deep charcoal (#14100C) bar with Montserrat wordmark.
+ * Montserrat nav links. Budweiser red top accent line. Gold active state.
  * No nested anchor tags — Link renders its own <a>.
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -59,10 +59,10 @@ export default function Navigation() {
             href="/"
             style={{ textDecoration: "none", display: "flex", flexDirection: "column", lineHeight: 1 }}
           >
-            <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1rem", fontWeight: 700, color: "#F8F5F0", letterSpacing: "0.01em", lineHeight: 1.1 }}>
+            <span style={{ fontFamily: "'Montserrat', system-ui, sans-serif", fontSize: "1rem", fontWeight: 800, color: "#F8F5F0", letterSpacing: "0.01em", lineHeight: 1.1 }}>
               Ken <span style={{ color: "#C8102E" }}>"Spanky"</span> Moskowitz
             </span>
-            <span style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8960C", marginTop: "3px" }}>
+            <span style={{ fontFamily: "'Montserrat', system-ui, sans-serif", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8960C", marginTop: "3px" }}>
               Super Bowl Portfolio · 10 Commercials
             </span>
           </Link>
@@ -76,7 +76,7 @@ export default function Navigation() {
                   key={link.path}
                   href={link.path}
                   style={{
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "'Montserrat', system-ui, sans-serif",
                     fontSize: "0.7rem",
                     fontWeight: 600,
                     letterSpacing: "0.07em",
@@ -122,9 +122,9 @@ export default function Navigation() {
                   key={link.path}
                   href={link.path}
                   style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: "1.25rem",
-                    fontWeight: isActive ? 700 : 400,
+                    fontFamily: "'Montserrat', system-ui, sans-serif",
+                    fontSize: "1.1rem",
+                    fontWeight: isActive ? 700 : 500,
                     color: isActive ? "#B8960C" : "#F8F5F0",
                     padding: "1rem 1.5rem",
                     borderBottom: "1px solid rgba(255,255,255,0.08)",

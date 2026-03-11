@@ -4,7 +4,7 @@
  * Design: Variety/IMDb/Ad Age editorial style.
  *   - Full-bleed cinematic hero image (kept from original design)
  *   - Cream (#F8F5F0) background below the fold
- *   - Playfair Display serif headlines, Source Sans 3 body/credits
+ *   - Montserrat headlines and body/credits (all weights)
  *   - Budweiser red (#C8102E) used only for accent lines and labels
  *   - Muted gold (#B8960C) for Ken Moskowitz featured block border
  *   - Two-column credit rows (role | name) separated by 1px rules
@@ -68,8 +68,9 @@ const C = {
   navBg: "#14100C",
 };
 
-const serif = "'Playfair Display', Georgia, serif";
-const sans = "'Source Sans 3', 'Source Sans Pro', sans-serif";
+const font = "'Montserrat', system-ui, sans-serif";
+const serif = font;
+const sans = font;
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 

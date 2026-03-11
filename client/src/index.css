@@ -20,11 +20,11 @@
  *   --white:       #FFFFFF
  *
  * Typography:
- *   Headlines:  'Playfair Display' (serif) — weight 700/900
- *   Subheads:   'Playfair Display' (serif) — weight 400 italic
- *   Body/UI:    'Source Sans 3' (humanist sans) — weight 400/600
- *   Credits:    'Source Sans 3' — weight 400, tracked
- *   Labels:     'Source Sans 3' — weight 700, uppercase, tracked
+ *   Headlines:  'Montserrat' — weight 800/900 (ExtraBold/Black)
+ *   Subheads:   'Montserrat' — weight 600/700
+ *   Body/UI:    'Montserrat' — weight 400/500
+ *   Credits:    'Montserrat' — weight 400, tracked
+ *   Labels:     'Montserrat' — weight 700, uppercase, tracked
  *
  * Layout:
  *   Max content width: 1100px
@@ -133,13 +133,13 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     background-color: var(--cream);
     color: var(--charcoal);
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     color: var(--charcoal);
     line-height: 1.15;
   }
@@ -201,7 +201,7 @@
 
   /* Section label — uppercase tracked sans */
   .section-label {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -211,7 +211,7 @@
 
   /* Credit role cell */
   .credit-role {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -224,7 +224,7 @@
 
   /* Credit name cell */
   .credit-name {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     color: var(--ink);
@@ -232,7 +232,7 @@
 
   /* Ken Moskowitz highlighted credit name */
   .credit-name-featured {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--charcoal);
@@ -247,7 +247,7 @@
 
   /* Nav link */
   .nav-link {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.08em;
