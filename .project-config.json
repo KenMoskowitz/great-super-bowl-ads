@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663141268147/DTyxrabrZyz494jJBJ9MPG",
+    "access_key_id": "ASIAZV3A2ECZPVWYL2WJ",
+    "secret_access_key": "SnXmbkIcM/E9D1heRhTJHjAMuu84Nw730fvZCtvq",
+    "session_token": "IQoJb3JpZ2luX2VjEMf//////////wEaCXVzLWVhc3QtMSJGMEQCICGe8wb0UpnexDmyNG3/mwj8tVbs1zYEXMe2lZN7hMFZAiAlBLmWIHo/XhOVPkuJQbvW7X0C9vI9ECJRaUH4x9VPvir/AwiQ//////////8BEAQaDDY2NTM4NjA5ODg2NiIMfuzFylI++MBok1uPKtMDOEUO57LfP5izFpuaXIPqVlWp0ju2MSXtPy+GRRBbOcqc/WvWMjvlMJ4Q++9f8IBg8N9Gk5+7xZV2Rx+p73zmiYmbWFZDqurmARiMWIWQabbgpIKAoUF03Jx0M8iUQRetD8BZNLhScrTSuLIGel1IVa9v4spQD2FttPVASzHzulQPl1C/OSERG8kCzOwmz6dNL9fnTWNT2ehr97TLzDXle/GrDSETz7iE9HrxHU8/CK90JLlktb5EgZ8CsjdsAL36O09fyqiw2zhXLcDiUyzBotD7iaTcXSlWCMZC7Lz06Jl4ySZPDwbs29fpyCHeDPPJWd6s7tsAGImZg5KbdRc2t7cg6qtgPAGYCTeogG9FtIPVYVOf5QK8I7y/nDDP4QfmQ3wlHIopDfGwOY/AWlWy+XrxYzV0uOKJxDMluwQkZRVm/iqhuOzRH1oXvWj9txl44beo7Bq72ya5Gq2P/IHxerzOoYOyXEIGfsVdK98BXZolSvhaRoL8iDubM5OV8XpbWyEKzg+/yX0RYZVCKIpCEIkVPj44QsPEDhtiHnkDQT7lwvxCHqr128c7npv2A/zoRAlm5GF1lB6Boym0VJ/f1gjFfWg7baOQHHPtrv/fOg01aYAwyYii0AY6ngHMD13cozP+l8n5XkqltTUxMM+PZslejeO79Hs+VIM+jCYHi3v0weLGzjh1kEwQKNKMkLagDP6Kifs6wKO71wYROqJEdq2Paa5cTDAkAnIhggOzMcq0F2ydjAUJNhQ511MfI21HUM66M5llcBiYqtp2XiEZ0p/WK5d0g3sMHUkggIdiY2rO/jp6eHvcjfWBBZ+Wuer3UWJo+ar4YTeCkw==",
+    "expiration": "2026-05-17T02:50:49.000Z"
+  },
+  "name": "budweiser-sb60-credits",
+  "path": "/home/ubuntu/budweiser-sb60-credits",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "aQopU5ehAXp3LSQ92gfv4J",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "QQKPdk8raDnNKWVwoMpvor",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Ken 'Spanky' Moskowitz",
+    "OWNER_OPEN_ID": "GZcG86JneDrZsuz56qtrGL",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "b83f8fdf-4d3d-4a88-bfa8-219c36960fff",
+    "VITE_APP_ID": "DTyxrabrZyz494jJBJ9MPG",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663141268147/IliAsGCOjXTsYtAU.png",
+    "VITE_APP_TITLE": "Budweiser Super Bowl 60 \"American Icons\" - Complete Credits",
+    "VITE_FRONTEND_FORGE_API_KEY": "cJgrJKbhTcAWWHPPNr8pkd",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
