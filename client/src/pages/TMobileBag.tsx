@@ -28,6 +28,7 @@ export default function TMobileBag() {
       kenDescription="Ken 'Spanky' Moskowitz contributed as Senior Copywriter on T-Mobile's viral Super Bowl LI commercial, helping craft the sharp, double-entendre-laden script that made the Martha Stewart and Snoop Dogg pairing so memorably hilarious."
       kenAchievement="One of the most viral Super Bowl ads of 2017 — the Martha & Snoop pairing became a cultural phenomenon"
       youtubeId="eVdGG_MYXpY"
+      videoSrc="/manus-storage/TMobileSuperBowlCommercial2017SnoopDoggandMarthaStewart_3a1599fa.mp4"
       youtubeTitle='T-Mobile "#BagOfUnlimited" Super Bowl LI 2017 Commercial'
       airDate="Feb 5, 2017"
       superBowl="Super Bowl LI"

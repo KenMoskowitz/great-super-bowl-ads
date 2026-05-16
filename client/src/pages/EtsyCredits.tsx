@@ -28,6 +28,7 @@ export default function EtsyCredits() {
       kenDescription="Ken 'Spanky' Moskowitz served as Creative Writing Consultant on Etsy's landmark first-ever Super Bowl commercial, contributing his expertise in crafting the comedic voice and narrative structure that made this ad a standout moment at Super Bowl LVIII."
       kenAchievement="Etsy's first-ever Super Bowl commercial — a historic debut on advertising's biggest stage"
       youtubeId="cXT8JgdvCHc"
+      videoSrc="/manus-storage/GiftMode_Etsy_s2024BigGameCommercial_94faa6fc.mp4"
       youtubeTitle='Etsy "Thank You, France" Super Bowl LVIII 2024 Commercial'
       airDate="Feb 11, 2024"
       superBowl="Super Bowl LVIII"

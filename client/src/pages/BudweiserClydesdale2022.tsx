@@ -28,6 +28,7 @@ export default function BudweiserClydesdale2022() {
       kenDescription="Ken 'Spanky' Moskowitz contributed his storytelling expertise as Contributing Writer on Budweiser's powerful Super Bowl LVI commercial, helping shape the emotional narrative arc of the Clydesdale's recovery and the bond formed with a loyal canine companion."
       kenAchievement="One of Ken's 10 Super Bowl contributions — part of his long creative partnership with Budweiser's iconic Clydesdale franchise"
       youtubeId="H3WRqDrA0cY"
+      videoSrc="/manus-storage/SuperBowlLVI(56)Commercial_Budweiser-AClydesdale'sJourney(2022)_984b63a5.mp4"
       youtubeTitle="Budweiser A Clydesdale's Journey Super Bowl LVI 2022 Commercial"
       airDate="Feb 13, 2022"
       superBowl="Super Bowl LVI"

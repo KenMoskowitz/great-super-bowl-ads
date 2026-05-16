@@ -1,15 +1,22 @@
 {
   "build_command": "pnpm run build",
-  "capabilities": [],
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
   "dev_command": "pnpm run dev",
-  "env_vars": {},
+  "env_vars": {
+    "DATABASE_URL": "mysql://3DzeKEMNafgzPYi.457e7998dcf3:NCkcHDbSf98X4t13I3GC@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/DTyxrabrZyz494jJBJ9MPG?ssl={\"rejectUnauthorized\":true}",
+    "DRIZZLE_DATABASE_URL": "mysql://3DzeKEMNafgzPYi.457e7998dcf3:NCkcHDbSf98X4t13I3GC@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/DTyxrabrZyz494jJBJ9MPG?ssl={\"rejectUnauthorized\":true}"
+  },
   "experiments": null,
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663141268147/DTyxrabrZyz494jJBJ9MPG",
-    "access_key_id": "ASIAZV3A2ECZPVWYL2WJ",
-    "secret_access_key": "SnXmbkIcM/E9D1heRhTJHjAMuu84Nw730fvZCtvq",
-    "session_token": "IQoJb3JpZ2luX2VjEMf//////////wEaCXVzLWVhc3QtMSJGMEQCICGe8wb0UpnexDmyNG3/mwj8tVbs1zYEXMe2lZN7hMFZAiAlBLmWIHo/XhOVPkuJQbvW7X0C9vI9ECJRaUH4x9VPvir/AwiQ//////////8BEAQaDDY2NTM4NjA5ODg2NiIMfuzFylI++MBok1uPKtMDOEUO57LfP5izFpuaXIPqVlWp0ju2MSXtPy+GRRBbOcqc/WvWMjvlMJ4Q++9f8IBg8N9Gk5+7xZV2Rx+p73zmiYmbWFZDqurmARiMWIWQabbgpIKAoUF03Jx0M8iUQRetD8BZNLhScrTSuLIGel1IVa9v4spQD2FttPVASzHzulQPl1C/OSERG8kCzOwmz6dNL9fnTWNT2ehr97TLzDXle/GrDSETz7iE9HrxHU8/CK90JLlktb5EgZ8CsjdsAL36O09fyqiw2zhXLcDiUyzBotD7iaTcXSlWCMZC7Lz06Jl4ySZPDwbs29fpyCHeDPPJWd6s7tsAGImZg5KbdRc2t7cg6qtgPAGYCTeogG9FtIPVYVOf5QK8I7y/nDDP4QfmQ3wlHIopDfGwOY/AWlWy+XrxYzV0uOKJxDMluwQkZRVm/iqhuOzRH1oXvWj9txl44beo7Bq72ya5Gq2P/IHxerzOoYOyXEIGfsVdK98BXZolSvhaRoL8iDubM5OV8XpbWyEKzg+/yX0RYZVCKIpCEIkVPj44QsPEDhtiHnkDQT7lwvxCHqr128c7npv2A/zoRAlm5GF1lB6Boym0VJ/f1gjFfWg7baOQHHPtrv/fOg01aYAwyYii0AY6ngHMD13cozP+l8n5XkqltTUxMM+PZslejeO79Hs+VIM+jCYHi3v0weLGzjh1kEwQKNKMkLagDP6Kifs6wKO71wYROqJEdq2Paa5cTDAkAnIhggOzMcq0F2ydjAUJNhQ511MfI21HUM66M5llcBiYqtp2XiEZ0p/WK5d0g3sMHUkggIdiY2rO/jp6eHvcjfWBBZ+Wuer3UWJo+ar4YTeCkw==",
-    "expiration": "2026-05-17T02:50:49.000Z"
+    "access_key_id": "ASIAZV3A2ECZHGYW4FO3",
+    "secret_access_key": "eujJV3SHJajbLGAQyW2oDbSqodZS9I/k73kYnGWA",
+    "session_token": "IQoJb3JpZ2luX2VjEMf//////////wEaCXVzLWVhc3QtMSJGMEQCIDpqJ0jDTyAttZi1DyTC9yQFQdJCXZJyYqnDx2f1N4F7AiBRT+1JwDHfRyzUVihMzL9s2NByH7Dl78Hb0/KUggfLMyr/AwiQ//////////8BEAQaDDY2NTM4NjA5ODg2NiIMZH8suyCLUMdxSG3QKtMDPGYovrsziUkwk0ZC5rJGobiKfcTYtWzG7zYTC0l0g7NGJCplwmcprhDnMtfT5l+v5GZzJq2K50DLGww0mU7SEnm0sIrEMh5t/CGmFpi+Rqyh5JTBwSqc+Y9qtZ0grxyDqd6Nwf8AhAb96215mNTv7xfRFMy/SAc4l2npnxaKYTdmah7QrhuECmLvFfdQqQs8sQH1w914WYXrqS6z8XcFQgpACeq14VavQmy0tE3z1/d3GVE1ZB9GZa9LaYx5MNfUSrhEhn8sSRqQ6Tp7ZRtSgAcKozg3nLOlObHesdCOEEi4gvkKhy0T3/tcAcDbcuz/hQ5M9P7iz6GbSNnRH1wUY2cGhb/af2p5WhFXAxQeZ6n7v8WUHXvcSgZxyVh1lQUjyF3x/fZUyBLb4DhEDXbYRgEORXeaDcX9W9L1lfuLiB2rrpn9DYloADONCI7rhkcWr4sqms468MCT5vQQyUkctYvSN2C9NZoRUvUqY6WWPQi5JsF2cZGwWt66w5BYyeR7QN+uWpJZ5wl/HxcFcrkwdEsHTiTSpeZrrMeIbQa/6QLw56n0D5/++cUUUbD8WnTdXHzu65PBewbIZrddTuaa3moyK0XbkbINUbMytNMz5kFJJz4w6o6i0AY6ngEppNtJLtAc3sXzukEFsFxNtVsFBV0N+bYShnHv9LSgtlIou8uBU5oGECQx0iH5RHToAdZ9vwjoxIPeaoAKvhZRQYVbp+R7LZU1bEm7J7LvwZP2JuKa+7HkFl7asb343O6q/ET074QPQL45W0uKgbP8jt5O+TymyOfac4GYpF8MsDfJqVFEfC25mLAZVrD3UAYbbjA6/enM9ow6jQrQxA==",
+    "expiration": "2026-05-17T03:04:10.000Z"
   },
   "name": "budweiser-sb60-credits",
   "path": "/home/ubuntu/budweiser-sb60-credits",

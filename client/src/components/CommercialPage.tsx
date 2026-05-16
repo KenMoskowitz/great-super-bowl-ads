@@ -14,7 +14,7 @@
 
 import Navigation from "@/components/Navigation";
 import { Link } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -39,8 +39,9 @@ export interface CommercialPageProps {
   kenRole: string;
   kenDescription: string;
   kenAchievement?: string;
-  youtubeId: string;
+  youtubeId?: string;
   youtubeTitle: string;
+  videoSrc?: string;
   duration?: string;
   airDate: string;
   superBowl: string;
@@ -151,6 +152,7 @@ export default function CommercialPage({
   kenAchievement,
   youtubeId,
   youtubeTitle,
+  videoSrc,
   airDate,
   superBowl,
   achievement,
@@ -162,6 +164,17 @@ export default function CommercialPage({
   schemaBreadcrumb,
   schemaUrl,
 }: CommercialPageProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPoster, setShowPoster] = useState(true);
+
+  const handlePlay = () => {
+    setShowPoster(false);
+    setIsPlaying(true);
+    setTimeout(() => {
+      videoRef.current?.play();
+    }, 50);
+  };
 
   // Inject VideoObject + BreadcrumbList schema
   useEffect(() => {
@@ -319,16 +332,65 @@ export default function CommercialPage({
           <h2 style={{ fontFamily: serif, fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 700, color: C.charcoal, marginTop: "0.75rem", marginBottom: "1.5rem" }}>
             {title}
           </h2>
-          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", backgroundColor: "#000" }}>
-            <iframe
-              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-              src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`}
-              title={youtubeTitle}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
+
+          {/* Native video player */}
+          {videoSrc ? (
+            <div style={{ position: "relative", backgroundColor: "#000", aspectRatio: "16/9", overflow: "hidden" }}>
+              {/* Poster / click-to-play overlay */}
+              {showPoster && (
+                <div
+                  onClick={handlePlay}
+                  style={{
+                    position: "absolute", inset: 0, zIndex: 2, cursor: "pointer",
+                    background: "linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)",
+                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                    gap: "1rem",
+                  }}
+                >
+                  {/* Play button */}
+                  <div
+                    style={{
+                      width: "72px", height: "72px", borderRadius: "50%",
+                      backgroundColor: C.red, display: "flex", alignItems: "center", justifyContent: "center",
+                      boxShadow: "0 4px 24px rgba(200,16,46,0.5)",
+                      transition: "transform 0.15s ease, box-shadow 0.15s ease",
+                    }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1.08)"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1)"; }}
+                  >
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                      <polygon points="5,3 19,12 5,21" />
+                    </svg>
+                  </div>
+                  <span style={{ fontFamily: sans, fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>
+                    Play Commercial
+                  </span>
+                </div>
+              )}
+              <video
+                ref={videoRef}
+                controls={isPlaying}
+                preload="none"
+                style={{ width: "100%", height: "100%", display: "block", objectFit: "contain" }}
+                onEnded={() => { setIsPlaying(false); setShowPoster(true); }}
+              >
+                <source src={videoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          ) : youtubeId ? (
+            /* Fallback: YouTube embed if no native video */
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", backgroundColor: "#000" }}>
+              <iframe
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`}
+                title={youtubeTitle}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          ) : null}
         </div>
       </section>
 

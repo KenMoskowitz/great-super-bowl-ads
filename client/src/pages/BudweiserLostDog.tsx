@@ -28,6 +28,7 @@ export default function BudweiserLostDog() {
       kenDescription="Ken 'Spanky' Moskowitz contributed as a writer on Budweiser's beloved 'Lost Dog' commercial, helping craft the emotional narrative that made this puppy-and-Clydesdale story the most shared Super Bowl ad of 2015 and one of the most beloved in the franchise's history."
       kenAchievement="The most shared Super Bowl ad of 2015 — watched over 50 million times online and beloved by audiences worldwide"
       youtubeId="xAsjRRMMg_Q"
+      videoSrc="/manus-storage/BudweiserLostDogSuperBowlCommercial_ffffe0cc.mp4"
       youtubeTitle='Budweiser "Lost Dog" Super Bowl XLIX 2015 Commercial'
       airDate="Feb 1, 2015"
       superBowl="Super Bowl XLIX"
