@@ -27,7 +27,7 @@ export default function MMsJustMyShell() {
       kenRole="Contributing Writer"
       kenDescription="Ken 'Spanky' Moskowitz contributed as a writer on M&M's hilarious Super Bowl XLVI commercial, helping develop the comedic concept and sharp dialogue that made Red M&M's impromptu dance to 'Sexy and I Know It' one of the most memorable moments of Super Bowl 2012."
       kenAchievement="One of the most-laughed-at Super Bowl ads of 2012 — Red M&M's dance became an instant pop culture moment"
-      youtubeId="WK7lIjFsGvg"
+      youtubeId="Azs1lbG2eOU"
       youtubeTitle="M&M's Just My Shell Super Bowl XLVI 2012 Commercial"
       airDate="Feb 5, 2012"
       superBowl="Super Bowl XLVI"
