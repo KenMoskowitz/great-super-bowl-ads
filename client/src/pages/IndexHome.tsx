@@ -27,16 +27,16 @@ const serif = mono; // All fonts use Montserrat
 const sans = mono;
 
 const commercials = [
-  { year: "2026", brand: "Budweiser", title: "American Icons", tagline: "The Clydesdale and the Eagle — A Story of American Resilience", kenRole: "Writer", superBowl: "Super Bowl LX", achievement: "10th Super Bowl", path: "/budweiser-american-icons", youtubeId: "a_mh-v02-Tw" },
-  { year: "2024", brand: "State Farm", title: "Agent State Farm", tagline: 'Arnold can\'t say "neighbor." Danny DeVito saves the day.', kenRole: "Contributing Writer", superBowl: "Super Bowl LVIII", achievement: "#1 USA Today Ad Meter", path: "/state-farm-agent", youtubeId: "86DNiIg3Lyk" },
-  { year: "2024", brand: "Etsy", title: "Thank You, France", tagline: "America thanks France for the Statue of Liberty — with cheese.", kenRole: "Creative Writing Consultant", superBowl: "Super Bowl LVIII", achievement: "Viral Sensation", path: "/etsy-thank-you-france", youtubeId: "cXT8JgdvCHc" },
-  { year: "2022", brand: "Budweiser", title: "A Clydesdale's Journey", tagline: "An injured Clydesdale finds friendship and the will to recover.", kenRole: "Lead Writer", superBowl: "Super Bowl LVI", achievement: "Top 5 Ad Meter", path: "/budweiser-clydesdales-journey", youtubeId: "H3WRqDrA0cY" },
-  { year: "2019", brand: "Bubly", title: "Bublé vs. Bubly", tagline: 'Singer Michael Bublé insists on pronouncing Bubly as "Bublé."', kenRole: "Contributing Writer", superBowl: "Super Bowl LIII", achievement: "Top 10 Ad Meter", path: "/bubly-buble", youtubeId: "rrk6QQfAZpc" },
-  { year: "2017", brand: "T-Mobile", title: "#BagOfUnlimited", tagline: "Martha Stewart and Snoop Dogg explain unlimited data with cannabis puns.", kenRole: "Lead Writer", superBowl: "Super Bowl LI", achievement: "Most Shared 2017", path: "/tmobile-bag-of-unlimited", youtubeId: "eVdGG_MYXpY" },
-  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog", youtubeId: "Tu10xwlwWEk" },
-  { year: "2012", brand: "M&M's", title: "Just My Shell", tagline: 'A brown M&M is mistaken for naked. Red tears off his shell to "Sexy and I Know It."', kenRole: "Contributing Writer", superBowl: "Super Bowl XLVI", achievement: "Top 5 Ad Meter", path: "/mms-just-my-shell", youtubeId: "Azs1lbG2eOU" },
-  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force", youtubeId: "u48RXO2HzXo" },
-  { year: "2010", brand: "Bud Light", title: "T-Pain Voice", tagline: "Men who hear about a Bud Light party talk like T-Pain. Then T-Pain shows up.", kenRole: "Lead Writer", superBowl: "Super Bowl XLIV", achievement: "Most Memorable 2010", path: "/bud-light-tpain", youtubeId: "bDhjcP02GQg" },
+  { year: "2026", brand: "Budweiser", title: "American Icons", tagline: "The Clydesdale and the Eagle — A Story of American Resilience", kenRole: "Writer", superBowl: "Super Bowl LX", achievement: "10th Super Bowl", path: "/budweiser-american-icons", thumbnail: "/thumbnails/budweiser-american-icons.jpg" },
+  { year: "2024", brand: "State Farm", title: "Agent State Farm", tagline: 'Arnold can\'t say "neighbor." Danny DeVito saves the day.', kenRole: "Contributing Writer", superBowl: "Super Bowl LVIII", achievement: "#1 USA Today Ad Meter", path: "/state-farm-agent", thumbnail: "/thumbnails/state-farm-agent.jpg" },
+  { year: "2024", brand: "Etsy", title: "Thank You, France", tagline: "America thanks France for the Statue of Liberty — with cheese.", kenRole: "Creative Writing Consultant", superBowl: "Super Bowl LVIII", achievement: "Viral Sensation", path: "/etsy-thank-you-france", thumbnail: "/thumbnails/etsy-thank-you-france.jpg" },
+  { year: "2022", brand: "Budweiser", title: "A Clydesdale's Journey", tagline: "An injured Clydesdale finds friendship and the will to recover.", kenRole: "Lead Writer", superBowl: "Super Bowl LVI", achievement: "Top 5 Ad Meter", path: "/budweiser-clydesdales-journey", thumbnail: "/thumbnails/budweiser-clydesdales-journey.jpg" },
+  { year: "2019", brand: "Bubly", title: "Bublé vs. Bubly", tagline: 'Singer Michael Bublé insists on pronouncing Bubly as "Bublé."', kenRole: "Contributing Writer", superBowl: "Super Bowl LIII", achievement: "Top 10 Ad Meter", path: "/bubly-buble", thumbnail: "/thumbnails/bubly-buble.jpg" },
+  { year: "2017", brand: "T-Mobile", title: "#BagOfUnlimited", tagline: "Martha Stewart and Snoop Dogg explain unlimited data with cannabis puns.", kenRole: "Lead Writer", superBowl: "Super Bowl LI", achievement: "Most Shared 2017", path: "/tmobile-bag-of-unlimited", thumbnail: "/thumbnails/tmobile-bag-of-unlimited.jpg" },
+  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog", thumbnail: "/thumbnails/budweiser-lost-dog.jpg" },
+  { year: "2012", brand: "M&M's", title: "Just My Shell", tagline: 'A brown M&M is mistaken for naked. Red tears off his shell to "Sexy and I Know It."', kenRole: "Contributing Writer", superBowl: "Super Bowl XLVI", achievement: "Top 5 Ad Meter", path: "/mms-just-my-shell", thumbnail: "/thumbnails/mms-just-my-shell.jpg" },
+  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force", thumbnail: "/thumbnails/volkswagen-the-force.jpg" },
+  { year: "2010", brand: "Bud Light", title: "T-Pain Voice", tagline: "Men who hear about a Bud Light party talk like T-Pain. Then T-Pain shows up.", kenRole: "Lead Writer", superBowl: "Super Bowl XLIV", achievement: "Most Memorable 2010", path: "/bud-light-tpain", thumbnail: "/thumbnails/bud-light-tpain.jpg" },
 ];
 
 function RedRule() {
@@ -186,7 +186,7 @@ export default function IndexHome() {
                 >
                   <div style={{ position: "relative", aspectRatio: "16 / 9", overflow: "hidden", backgroundColor: C.charcoal }}>
                     <img
-                      src={`https://img.youtube.com/vi/${c.youtubeId}/hqdefault.jpg`}
+                      src={c.thumbnail}
                       alt={`${c.brand} — ${c.title} thumbnail`}
                       loading="lazy"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}

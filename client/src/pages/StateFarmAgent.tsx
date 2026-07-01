@@ -27,6 +27,7 @@ export default function StateFarmAgent() {
       kenRole="Senior Copywriter"
       kenDescription="Ken 'Spanky' Moskowitz contributed his legendary copywriting expertise to State Farm's record-breaking Super Bowl LVIII commercial, helping craft the comedic dialogue that made 'Agent State Farm' the #1 ad of Super Bowl LVIII according to USA Today's Ad Meter."
       kenAchievement="This commercial topped the USA Today Ad Meter survey — the most popular Super Bowl ad of 2024"
+      thumbnailImage="/thumbnails/state-farm-agent.jpg"
       youtubeId="86DNiIg3Lyk"
       videoSrc="/manus-storage/SuperBowlLVIII(58)Commercial_StateFarm-ArnoldSchwarzeneggerNeighbaaa(2024)_376df8a4.mp4"
       youtubeTitle='State Farm "Agent State Farm" Super Bowl LVIII 2024 Commercial'

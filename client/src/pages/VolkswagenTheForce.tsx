@@ -27,6 +27,7 @@ export default function VolkswagenTheForce() {
       kenRole="Contributing Writer"
       kenDescription="Ken 'Spanky' Moskowitz contributed as a writer on Volkswagen's landmark Super Bowl XLV commercial, helping shape the charming story of a little Darth Vader who believes he has the Force — a concept that became the most viral Super Bowl ad of 2011 and one of the greatest of all time."
       kenAchievement="Voted #9 on YouTube's Top 10 Videos of 2011 — one of the most viral Super Bowl ads ever made, with over 60 million views"
+      thumbnailImage="/thumbnails/volkswagen-the-force.jpg"
       youtubeId="u48RXO2HzXo"
       videoSrc="/manus-storage/TheForce-VolkswagenCommercial_3dbbf3e3.mp4"
       youtubeTitle='Volkswagen "The Force" Super Bowl XLV 2011 Commercial'

@@ -40,6 +40,7 @@ export interface CommercialPageProps {
   kenRole: string;
   kenDescription: string;
   kenAchievement?: string;
+  thumbnailImage: string;
   youtubeId?: string;
   youtubeTitle: string;
   videoSrc?: string;
@@ -151,6 +152,7 @@ export default function CommercialPage({
   kenRole,
   kenDescription,
   kenAchievement,
+  thumbnailImage,
   youtubeId,
   youtubeTitle,
   videoSrc,
@@ -177,26 +179,32 @@ export default function CommercialPage({
     }, 50);
   };
 
-  // Inject VideoObject + BreadcrumbList schema
+  // Inject VideoObject + BreadcrumbList schema.
+  // Thumbnail and video content are self-hosted, not on YouTube — the
+  // schema points at our own thumbnail image and video file, not a
+  // YouTube embed.
   useEffect(() => {
-    if (!schemaVideoId) return;
+    const siteOrigin = "https://greatestsuperbowlads.com";
+    const videoObject: Record<string, unknown> = {
+      "@type": "VideoObject",
+      "name": title,
+      "description": description,
+      "thumbnailUrl": `${siteOrigin}${thumbnailImage}`,
+      "uploadDate": schemaUploadDate || "2024-01-01",
+      "url": schemaUrl || siteOrigin,
+    };
+    if (videoSrc) {
+      videoObject.contentUrl = `${siteOrigin}${videoSrc}`;
+    }
     const schema = {
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "VideoObject",
-          "name": title,
-          "description": description,
-          "thumbnailUrl": `https://img.youtube.com/vi/${schemaVideoId}/maxresdefault.jpg`,
-          "uploadDate": schemaUploadDate || "2024-01-01",
-          "embedUrl": `https://www.youtube.com/embed/${schemaVideoId}`,
-          "url": schemaUrl || "https://greatestsuperbowlads.com",
-        },
+        videoObject,
         {
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://greatestsuperbowlads.com/" },
-            { "@type": "ListItem", "position": 2, "name": schemaBreadcrumb || title, "item": schemaUrl || "https://greatestsuperbowlads.com" },
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteOrigin}/` },
+            { "@type": "ListItem", "position": 2, "name": schemaBreadcrumb || title, "item": schemaUrl || siteOrigin },
           ],
         },
       ],
@@ -207,7 +215,7 @@ export default function CommercialPage({
     el.id = "commercial-schema";
     document.getElementById("commercial-schema")?.remove();
     document.head.appendChild(el);
-  }, [schemaVideoId, title, description, schemaUploadDate, schemaUrl, schemaBreadcrumb]);
+  }, [thumbnailImage, videoSrc, title, description, schemaUploadDate, schemaUrl, schemaBreadcrumb]);
 
   return (
     <div style={{ backgroundColor: C.cream, minHeight: "100vh" }}>
