@@ -26,16 +26,16 @@ const serif = mono; // All fonts use Montserrat
 const sans = mono;
 
 const commercials = [
-  { year: "2026", brand: "Budweiser", title: "American Icons", tagline: "The Clydesdale and the Eagle — A Story of American Resilience", kenRole: "Writer", superBowl: "Super Bowl LX", achievement: "10th Super Bowl", path: "/budweiser-american-icons" },
-  { year: "2024", brand: "State Farm", title: "Agent State Farm", tagline: 'Arnold can\'t say "neighbor." Danny DeVito saves the day.', kenRole: "Contributing Writer", superBowl: "Super Bowl LVIII", achievement: "#1 USA Today Ad Meter", path: "/state-farm-agent" },
-  { year: "2024", brand: "Etsy", title: "Thank You, France", tagline: "America thanks France for the Statue of Liberty — with cheese.", kenRole: "Creative Writing Consultant", superBowl: "Super Bowl LVIII", achievement: "Viral Sensation", path: "/etsy-thank-you-france" },
-  { year: "2022", brand: "Budweiser", title: "A Clydesdale's Journey", tagline: "An injured Clydesdale finds friendship and the will to recover.", kenRole: "Lead Writer", superBowl: "Super Bowl LVI", achievement: "Top 5 Ad Meter", path: "/budweiser-clydesdales-journey" },
-  { year: "2019", brand: "Bubly", title: "Bublé vs. Bubly", tagline: 'Singer Michael Bublé insists on pronouncing Bubly as "Bublé."', kenRole: "Contributing Writer", superBowl: "Super Bowl LIII", achievement: "Top 10 Ad Meter", path: "/bubly-buble" },
-  { year: "2017", brand: "T-Mobile", title: "#BagOfUnlimited", tagline: "Martha Stewart and Snoop Dogg explain unlimited data with cannabis puns.", kenRole: "Lead Writer", superBowl: "Super Bowl LI", achievement: "Most Shared 2017", path: "/tmobile-bag-of-unlimited" },
-  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog" },
-  { year: "2012", brand: "M&M's", title: "Just My Shell", tagline: 'A brown M&M is mistaken for naked. Red tears off his shell to "Sexy and I Know It."', kenRole: "Contributing Writer", superBowl: "Super Bowl XLVI", achievement: "Top 5 Ad Meter", path: "/mms-just-my-shell" },
-  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force" },
-  { year: "2010", brand: "Bud Light", title: "T-Pain Voice", tagline: "Men who hear about a Bud Light party talk like T-Pain. Then T-Pain shows up.", kenRole: "Lead Writer", superBowl: "Super Bowl XLIV", achievement: "Most Memorable 2010", path: "/bud-light-tpain" },
+  { year: "2026", brand: "Budweiser", title: "American Icons", tagline: "The Clydesdale and the Eagle — A Story of American Resilience", kenRole: "Writer", superBowl: "Super Bowl LX", achievement: "10th Super Bowl", path: "/budweiser-american-icons", youtubeId: "a_mh-v02-Tw" },
+  { year: "2024", brand: "State Farm", title: "Agent State Farm", tagline: 'Arnold can\'t say "neighbor." Danny DeVito saves the day.', kenRole: "Contributing Writer", superBowl: "Super Bowl LVIII", achievement: "#1 USA Today Ad Meter", path: "/state-farm-agent", youtubeId: "86DNiIg3Lyk" },
+  { year: "2024", brand: "Etsy", title: "Thank You, France", tagline: "America thanks France for the Statue of Liberty — with cheese.", kenRole: "Creative Writing Consultant", superBowl: "Super Bowl LVIII", achievement: "Viral Sensation", path: "/etsy-thank-you-france", youtubeId: "cXT8JgdvCHc" },
+  { year: "2022", brand: "Budweiser", title: "A Clydesdale's Journey", tagline: "An injured Clydesdale finds friendship and the will to recover.", kenRole: "Lead Writer", superBowl: "Super Bowl LVI", achievement: "Top 5 Ad Meter", path: "/budweiser-clydesdales-journey", youtubeId: "H3WRqDrA0cY" },
+  { year: "2019", brand: "Bubly", title: "Bublé vs. Bubly", tagline: 'Singer Michael Bublé insists on pronouncing Bubly as "Bublé."', kenRole: "Contributing Writer", superBowl: "Super Bowl LIII", achievement: "Top 10 Ad Meter", path: "/bubly-buble", youtubeId: "rrk6QQfAZpc" },
+  { year: "2017", brand: "T-Mobile", title: "#BagOfUnlimited", tagline: "Martha Stewart and Snoop Dogg explain unlimited data with cannabis puns.", kenRole: "Lead Writer", superBowl: "Super Bowl LI", achievement: "Most Shared 2017", path: "/tmobile-bag-of-unlimited", youtubeId: "eVdGG_MYXpY" },
+  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog", youtubeId: "xAsjRRMMg_Q" },
+  { year: "2012", brand: "M&M's", title: "Just My Shell", tagline: 'A brown M&M is mistaken for naked. Red tears off his shell to "Sexy and I Know It."', kenRole: "Contributing Writer", superBowl: "Super Bowl XLVI", achievement: "Top 5 Ad Meter", path: "/mms-just-my-shell", youtubeId: "Azs1lbG2eOU" },
+  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force", youtubeId: "R55e-uHQna0" },
+  { year: "2010", brand: "Bud Light", title: "T-Pain Voice", tagline: "Men who hear about a Bud Light party talk like T-Pain. Then T-Pain shows up.", kenRole: "Lead Writer", superBowl: "Super Bowl XLIV", achievement: "Most Memorable 2010", path: "/bud-light-tpain", youtubeId: "bDhjcP02GQg" },
 ];
 
 function RedRule() {
@@ -86,7 +86,7 @@ export default function IndexHome() {
           </div>
 
           <h1 style={{ fontFamily: serif, fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 900, color: "#FFFFFF", lineHeight: 1.0, marginBottom: "0.5rem", textShadow: "0 2px 16px rgba(0,0,0,0.5)" }}>
-            Ken <em>"Spanky"</em>
+            Ken <span style={{ color: C.red }}>"Spanky"</span>
             <br />
             Moskowitz
           </h1>
@@ -115,7 +115,7 @@ export default function IndexHome() {
       <RedRule />
 
       {/* ── KEN BIO ───────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: C.white }}>
+      <section id="about" style={{ backgroundColor: C.white, scrollMarginTop: "59px" }}>
         <div className="container" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
           <SectionLabel>About the Writer</SectionLabel>
           <h2 style={{ fontFamily: serif, fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 900, color: C.charcoal, marginTop: "0.75rem", marginBottom: "0.25rem", lineHeight: 1.1 }}>
@@ -143,8 +143,8 @@ export default function IndexHome() {
 
       <RedRule />
 
-      {/* ── COMMERCIAL PORTFOLIO TABLE ────────────────────────────────────── */}
-      <section style={{ backgroundColor: C.cream }}>
+      {/* ── COMMERCIAL PORTFOLIO GRID ────────────────────────────────────── */}
+      <section id="portfolio" style={{ backgroundColor: C.cream, scrollMarginTop: "59px" }}>
         <div className="container" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
           <SectionLabel>Complete Portfolio</SectionLabel>
           <h2 style={{ fontFamily: serif, fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 900, color: C.charcoal, marginTop: "0.75rem", marginBottom: "0.5rem", lineHeight: 1.1 }}>
@@ -154,71 +154,59 @@ export default function IndexHome() {
             2010 – 2026 · Click any commercial to view complete production credits
           </p>
 
-          {/* Desktop table */}
-          <div className="hidden md:block">
-            <div style={{ borderBottom: `3px solid ${C.charcoal}`, paddingBottom: "0.5rem", display: "grid", gridTemplateColumns: "72px 130px 1fr 180px", gap: "0", marginBottom: "0" }}>
-              {["Year", "Brand", "Commercial", "Ken's Role"].map((h) => (
-                <span key={h} style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.slate }}>
-                  {h}
-                </span>
-              ))}
-            </div>
-
+          {/* Card grid — one card per commercial, thumbnail-first so the
+              portfolio reads as a video showcase instead of a data table. */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.75rem" }}>
             {commercials.map((c, i) => (
               <Link key={c.path} href={c.path} style={{ textDecoration: "none", display: "block" }}>
                 <div
+                  className="fade-up"
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "72px 130px 1fr 180px",
-                    gap: "0",
-                    padding: "1.25rem 0",
-                    borderBottom: `1px solid ${C.rule}`,
-                    backgroundColor: i % 2 === 0 ? "transparent" : C.white,
+                    backgroundColor: C.white,
+                    border: `1px solid ${C.rule}`,
+                    borderTop: `3px solid ${i % 2 === 0 ? C.red : C.gold}`,
                     cursor: "pointer",
-                    transition: "background-color 0.15s ease",
+                    transition: "transform 0.15s ease, box-shadow 0.15s ease",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = C.parchment; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = i % 2 === 0 ? "transparent" : C.white; }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 24px rgba(0,0,0,0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  }}
                 >
-                  <span style={{ fontFamily: serif, fontSize: "1.15rem", fontWeight: 700, color: C.red, alignSelf: "center" }}>{c.year}</span>
-                  <span style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.06em", alignSelf: "center", paddingRight: "1rem" }}>{c.brand}</span>
-                  <div style={{ alignSelf: "center", paddingRight: "1rem" }}>
-                    <div style={{ fontFamily: serif, fontSize: "1.05rem", fontWeight: 700, color: C.charcoal }}>{c.title}</div>
-                    <p style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 600, color: C.ink, marginTop: "3px" }}>{c.tagline}</p>
-                    {c.achievement && (
-                      <div style={{ fontFamily: sans, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: C.gold, marginTop: "4px" }}>{c.achievement}</div>
-                    )}
-                  </div>
-                  <div style={{ alignSelf: "center" }}>
-                    <span style={{ fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.red, border: `1px solid ${C.red}`, padding: "0.2rem 0.5rem", display: "inline-block" }}>
-                      {c.kenRole}
+                  <div style={{ position: "relative", aspectRatio: "16 / 9", overflow: "hidden", backgroundColor: C.charcoal }}>
+                    <img
+                      src={`https://img.youtube.com/vi/${c.youtubeId}/hqdefault.jpg`}
+                      alt={`${c.brand} — ${c.title} thumbnail`}
+                      loading="lazy"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                    <span style={{ position: "absolute", top: "0.6rem", left: "0.6rem", fontFamily: serif, fontSize: "0.9rem", fontWeight: 800, color: "#FFFFFF", backgroundColor: "rgba(0,0,0,0.65)", padding: "0.15rem 0.55rem" }}>
+                      {c.year}
                     </span>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
 
-          {/* Mobile list */}
-          <div className="md:hidden">
-            {commercials.map((c) => (
-              <Link key={c.path} href={c.path} style={{ textDecoration: "none", display: "block" }}>
-                <div style={{ borderBottom: `1px solid ${C.rule}`, padding: "1.5rem 0" }}>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: "0.75rem", marginBottom: "0.4rem" }}>
-                    <span style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.red }}>{c.year}</span>
-                    <span style={{ fontFamily: sans, fontSize: "0.7rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.08em" }}>{c.brand}</span>
-                  </div>
-                  <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.charcoal, marginBottom: "0.25rem" }}>{c.title}</div>
-                  <div style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 600, color: C.ink, marginBottom: "0.5rem" }}>{c.tagline}</div>
-                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-                    <span style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.red, border: `1px solid ${C.red}`, padding: "0.2rem 0.5rem" }}>
-                      {c.kenRole}
-                    </span>
-                    {c.achievement && (
-                      <span style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.gold }}>
-                        {c.achievement}
+                  <div style={{ padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", flex: 1 }}>
+                    <span style={{ fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, color: C.slate, textTransform: "uppercase", letterSpacing: "0.1em" }}>{c.brand}</span>
+                    <div style={{ fontFamily: serif, fontSize: "1.15rem", fontWeight: 700, color: C.charcoal, marginTop: "0.3rem" }}>{c.title}</div>
+                    <p style={{ fontFamily: sans, fontSize: "0.82rem", fontWeight: 500, color: C.ink, marginTop: "0.5rem", lineHeight: 1.5, flex: 1 }}>{c.tagline}</p>
+
+                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginTop: "1rem" }}>
+                      <span style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.red, border: `1px solid ${C.red}`, padding: "0.2rem 0.5rem", display: "inline-block" }}>
+                        {c.kenRole}
                       </span>
-                    )}
+                      {c.achievement && (
+                        <span style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.gold, backgroundColor: C.cream, padding: "0.2rem 0.5rem", display: "inline-block" }}>
+                          {c.achievement}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -230,13 +218,13 @@ export default function IndexHome() {
       <RedRule />
 
       {/* ── BRAND EXPLORER ───────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: C.parchment }}>
+      <section id="brands" style={{ backgroundColor: C.parchment, scrollMarginTop: "59px" }}>
         <div className="container" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
           <SectionLabel>Explore by Brand</SectionLabel>
           <h2 style={{ fontFamily: serif, fontSize: "1.5rem", fontWeight: 700, color: C.charcoal, marginTop: "0.75rem", marginBottom: "1.5rem" }}>
             Ken Moskowitz's Super Bowl Work by Brand
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "0" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.25rem" }}>
             {[
               { brand: "Budweiser", ads: ["American Icons (2026)", "A Clydesdale's Journey (2022)", "Lost Dog (2015)"], path: "/budweiser-american-icons" },
               { brand: "State Farm", ads: ["Agent State Farm (2024) — #1 Ad Meter"], path: "/state-farm-agent" },
@@ -246,12 +234,48 @@ export default function IndexHome() {
               { brand: "M&M's", ads: ["Just My Shell (2012)"], path: "/mms-just-my-shell" },
               { brand: "Volkswagen", ads: ["The Force (2011) — #9 YouTube Top 10"], path: "/volkswagen-the-force" },
               { brand: "Bud Light", ads: ["T-Pain Voice (2010)"], path: "/bud-light-tpain" },
-            ].map((brand) => (
-              <Link key={brand.path} href={brand.path} style={{ textDecoration: "none", display: "block", padding: "1.5rem", borderRight: `1px solid ${C.rule}`, borderBottom: `1px solid ${C.rule}` }}>
-                <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.charcoal, marginBottom: "0.5rem" }}>{brand.brand}</div>
-                {brand.ads.map((ad) => (
-                  <div key={ad} style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 400, color: C.slate, marginBottom: "0.2rem" }}>→ {ad}</div>
-                ))}
+            ].map((brand, i) => (
+              <Link key={brand.path} href={brand.path} style={{ textDecoration: "none", display: "block" }}>
+                <div
+                  style={{
+                    backgroundColor: C.white,
+                    border: `1px solid ${C.rule}`,
+                    borderTop: `3px solid ${i % 2 === 0 ? C.red : C.gold}`,
+                    padding: "1.5rem",
+                    height: "100%",
+                    transition: "transform 0.15s ease, box-shadow 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 18px rgba(0,0,0,0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "36px",
+                      height: "36px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: C.cream,
+                      color: C.red,
+                      fontFamily: serif,
+                      fontWeight: 800,
+                      fontSize: "1rem",
+                      marginBottom: "0.85rem",
+                    }}
+                  >
+                    {brand.brand.charAt(0)}
+                  </div>
+                  <div style={{ fontFamily: serif, fontSize: "1.1rem", fontWeight: 700, color: C.charcoal, marginBottom: "0.5rem" }}>{brand.brand}</div>
+                  {brand.ads.map((ad) => (
+                    <div key={ad} style={{ fontFamily: sans, fontSize: "0.8rem", fontWeight: 400, color: C.slate, marginBottom: "0.2rem" }}>→ {ad}</div>
+                  ))}
+                </div>
               </Link>
             ))}
           </div>
@@ -273,23 +297,11 @@ export default function IndexHome() {
             </div>
           </div>
           <div>
-            <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>Portfolio</div>
+            <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>Site</div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-              {commercials.slice(0, 5).map((c) => (
-                <Link key={c.path} href={c.path} style={{ fontFamily: sans, fontSize: "0.75rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>
-                  {c.year} — {c.brand}: {c.title}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>More</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-              {commercials.slice(5).map((c) => (
-                <Link key={c.path} href={c.path} style={{ fontFamily: sans, fontSize: "0.75rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>
-                  {c.year} — {c.brand}: {c.title}
-                </Link>
-              ))}
+              <a href="#portfolio" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>Portfolio</a>
+              <a href="#about" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>About</a>
+              <a href="#brands" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>By Brand</a>
             </div>
           </div>
           <div style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 400, color: "#5A5248", textAlign: "right", alignSelf: "flex-end" }}>
