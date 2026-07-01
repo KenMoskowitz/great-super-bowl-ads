@@ -15,6 +15,7 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
+import { AD_ZOMBIES_URL, adZombiesLinkProps, linkifyAdZombies } from "@/lib/adzombies";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -300,7 +301,7 @@ export default function CommercialPage({
               </h2>
               <div style={{ width: "48px", height: "2px", backgroundColor: C.red, marginBottom: "1.25rem" }} />
               <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.75, maxWidth: "700px" }}>
-                {kenDescription}
+                {linkifyAdZombies(kenDescription)}
               </p>
               {kenAchievement && (
                 <div style={{ marginTop: "1.25rem", padding: "0.9rem 1.25rem", backgroundColor: C.parchment, borderLeft: `3px solid ${C.red}` }}>
@@ -312,11 +313,14 @@ export default function CommercialPage({
 
               {/* Ken's credentials */}
               <div style={{ marginTop: "1.5rem", display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                {["Founder, Ad Zombies", "Founder, Wedgie Creative", "Featured Keynote Speaker", "Fractional CMO", "Advertising Consultant"].map((cred) => (
-                  <span key={cred} style={{ fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.slate, border: `1px solid ${C.rule}`, padding: "0.25rem 0.6rem", backgroundColor: C.cream }}>
-                    {cred}
-                  </span>
-                ))}
+                {["Founder, Ad Zombies", "Founder, Wedgie Creative", "Featured Keynote Speaker", "Fractional CMO", "Advertising Consultant"].map((cred) => {
+                  const chipStyle = { fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: C.slate, border: `1px solid ${C.rule}`, padding: "0.25rem 0.6rem", backgroundColor: C.cream, textDecoration: "none" };
+                  return cred === "Founder, Ad Zombies" ? (
+                    <a key={cred} href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={chipStyle}>{cred}</a>
+                  ) : (
+                    <span key={cred} style={chipStyle}>{cred}</span>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -494,7 +498,7 @@ export default function CommercialPage({
               Ken <span style={{ color: C.red }}>"Spanky"</span> Moskowitz
             </div>
             <div style={{ fontFamily: sans, fontSize: "0.7rem", fontWeight: 400, color: "#7A7268", marginTop: "4px" }}>
-              Founder, Ad Zombies · Founder, Wedgie Creative · Fractional CMO · Keynote Speaker
+              Founder, <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit" }}>Ad Zombies</a> · Founder, Wedgie Creative · Fractional CMO · Keynote Speaker
             </div>
           </div>
           <div style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 400, color: "#5A5248", textAlign: "right" }}>
