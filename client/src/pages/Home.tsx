@@ -28,6 +28,7 @@ export default function Home() {
       kenRole="Writer"
       kenDescription='Ken "Spanky" Moskowitz served as a writer on the Budweiser "American Icons" Super Bowl LX commercial — his 10th Super Bowl contribution spanning 16 years. As Founder of Ad Zombies and Wedgie Creative, Ken brings an unmatched ability to craft advertising narratives that resonate at the highest level of the industry. His work on this commercial helped shape one of the most emotionally powerful Super Bowl ads of 2026.'
       kenAchievement="This marks Ken Moskowitz's 10th Super Bowl commercial — a milestone achieved by only a handful of advertising writers in history. Spanning 16 years (2010–2026), his portfolio represents some of the most-watched, most-shared, and most-awarded commercials in Super Bowl history."
+      thumbnailImage="/thumbnails/budweiser-american-icons.jpg"
       youtubeId="a_mh-v02-Tw"
       videoSrc="/manus-storage/BudweiserSuperBowlLXCommercial'AmericanIcons'_35b4d64f.mp4"
       youtubeTitle='Budweiser "American Icons" Super Bowl LX 2026 Commercial — Clydesdale and Eagle'

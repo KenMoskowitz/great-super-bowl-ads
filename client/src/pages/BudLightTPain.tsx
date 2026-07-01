@@ -27,6 +27,7 @@ export default function BudLightTPain() {
       kenRole="Lead Writer"
       kenDescription="Ken 'Spanky' Moskowitz served as Lead Writer on Bud Light's Super Bowl XLIV commercial — his very first Super Bowl ad. The T-Pain Voice concept showcased Ken's ability to tap into pop culture at exactly the right moment, launching what would become a 10-commercial Super Bowl legacy spanning 16 years."
       kenAchievement="Ken's first Super Bowl commercial — the beginning of a 16-year, 10-commercial Super Bowl legacy spanning Budweiser, VW, M&M's, T-Mobile, Bubly, Etsy, State Farm, and more"
+      thumbnailImage="/thumbnails/bud-light-tpain.jpg"
       youtubeId="bDhjcP02GQg"
       videoSrc="/manus-storage/t-painbudlightsuperbowl44commercialhd_e2ac0858.mp4"
       youtubeTitle="Bud Light T-Pain Voice Super Bowl XLIV 2010 Commercial"

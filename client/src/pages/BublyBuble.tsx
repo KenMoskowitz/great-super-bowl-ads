@@ -27,6 +27,7 @@ export default function BublyBuble() {
       kenRole="Lead Writer"
       kenDescription="Ken 'Spanky' Moskowitz served as Lead Writer on PepsiCo's Bubly debut Super Bowl commercial, crafting the sharp comedic premise and wordplay that made the Michael Bublé name-confusion concept one of the funniest ads of Super Bowl LIII."
       kenAchievement="One of the most-talked-about comedic Super Bowl ads of 2019 — a perfect showcase of Ken's wit and wordplay expertise"
+      thumbnailImage="/thumbnails/bubly-buble.jpg"
       youtubeId="rrk6QQfAZpc"
       videoSrc="/manus-storage/bubly-buble-superbowl-2019_5ae9d3df.mp4"
       youtubeTitle='Bubly "Bublé vs. Bubly" Super Bowl LIII 2019 Commercial'
