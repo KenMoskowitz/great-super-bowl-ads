@@ -10,6 +10,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import { AD_ZOMBIES_CONTACT_URL, adZombiesLinkProps } from "@/lib/adzombies";
 
 // Primary nav stays short — individual commercials live in the
 // portfolio card grid and each detail page's "related" links,
@@ -105,6 +106,28 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={AD_ZOMBIES_CONTACT_URL}
+              {...adZombiesLinkProps}
+              style={{
+                fontFamily: "'Montserrat', system-ui, sans-serif",
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "#FFFFFF",
+                backgroundColor: "#C8102E",
+                padding: "0.55rem 1.1rem",
+                marginLeft: "0.75rem",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                transition: "background-color 0.15s ease",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#A50D24"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#C8102E"; }}
+            >
+              Work with Spanky
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -124,6 +147,25 @@ export default function Navigation() {
         <div className="fixed inset-0 z-40 flex flex-col" style={{ backgroundColor: "#14100C", paddingTop: "59px" }}>
           <div style={{ height: "3px", backgroundColor: "#C8102E" }} />
           <div className="flex flex-col overflow-y-auto">
+            <a
+              href={AD_ZOMBIES_CONTACT_URL}
+              {...adZombiesLinkProps}
+              style={{
+                fontFamily: "'Montserrat', system-ui, sans-serif",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                color: "#FFFFFF",
+                backgroundColor: "#C8102E",
+                textAlign: "center",
+                padding: "1rem 1.5rem",
+                textDecoration: "none",
+                display: "block",
+              }}
+            >
+              Work with Spanky
+            </a>
             {navLinks.map((link) => (
               <a
                 key={link.path}

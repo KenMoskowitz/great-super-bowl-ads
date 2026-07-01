@@ -7,6 +7,7 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "wouter";
 import { useEffect } from "react";
+import { AD_ZOMBIES_URL, adZombiesLinkProps } from "@/lib/adzombies";
 
 const C = {
   cream: "#F8F5F0",
@@ -32,9 +33,9 @@ const commercials = [
   { year: "2022", brand: "Budweiser", title: "A Clydesdale's Journey", tagline: "An injured Clydesdale finds friendship and the will to recover.", kenRole: "Lead Writer", superBowl: "Super Bowl LVI", achievement: "Top 5 Ad Meter", path: "/budweiser-clydesdales-journey", youtubeId: "H3WRqDrA0cY" },
   { year: "2019", brand: "Bubly", title: "Bublé vs. Bubly", tagline: 'Singer Michael Bublé insists on pronouncing Bubly as "Bublé."', kenRole: "Contributing Writer", superBowl: "Super Bowl LIII", achievement: "Top 10 Ad Meter", path: "/bubly-buble", youtubeId: "rrk6QQfAZpc" },
   { year: "2017", brand: "T-Mobile", title: "#BagOfUnlimited", tagline: "Martha Stewart and Snoop Dogg explain unlimited data with cannabis puns.", kenRole: "Lead Writer", superBowl: "Super Bowl LI", achievement: "Most Shared 2017", path: "/tmobile-bag-of-unlimited", youtubeId: "eVdGG_MYXpY" },
-  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog", youtubeId: "xAsjRRMMg_Q" },
+  { year: "2015", brand: "Budweiser", title: "Lost Dog", tagline: "A little yellow Labrador gets lost and finds his way home.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLIX", achievement: "#1 Ad Meter 2015", path: "/budweiser-lost-dog", youtubeId: "Tu10xwlwWEk" },
   { year: "2012", brand: "M&M's", title: "Just My Shell", tagline: 'A brown M&M is mistaken for naked. Red tears off his shell to "Sexy and I Know It."', kenRole: "Contributing Writer", superBowl: "Super Bowl XLVI", achievement: "Top 5 Ad Meter", path: "/mms-just-my-shell", youtubeId: "Azs1lbG2eOU" },
-  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force", youtubeId: "R55e-uHQna0" },
+  { year: "2011", brand: "Volkswagen", title: "The Force", tagline: "A kid in a Darth Vader costume tries the Force — and succeeds.", kenRole: "Contributing Writer", superBowl: "Super Bowl XLV", achievement: "#9 YouTube Top 10 2011", path: "/volkswagen-the-force", youtubeId: "u48RXO2HzXo" },
   { year: "2010", brand: "Bud Light", title: "T-Pain Voice", tagline: "Men who hear about a Bud Light party talk like T-Pain. Then T-Pain shows up.", kenRole: "Lead Writer", superBowl: "Super Bowl XLIV", achievement: "Most Memorable 2010", path: "/bud-light-tpain", youtubeId: "bDhjcP02GQg" },
 ];
 
@@ -125,17 +126,20 @@ export default function IndexHome() {
 
           <div style={{ borderLeft: `4px solid ${C.gold}`, paddingLeft: "1.75rem", maxWidth: "820px" }}>
             <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.25rem" }}>
-              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning {yearSpan} years. As <strong>Founder of Ad Zombies</strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
+              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning {yearSpan} years. As <strong>Founder of <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit" }}>Ad Zombies</a></strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
             </p>
             <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.5rem" }}>
               A <strong>Featured Keynote Speaker</strong>, <strong>Fractional CMO</strong> for several companies, and <strong>Advertising Consultant</strong> for some of the world's biggest brands, Ken brings a rare combination of creative brilliance and strategic business acumen to every project he touches.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-              {["Founder, Ad Zombies", "Founder, Wedgie Creative", "Featured Keynote Speaker", "Fractional CMO", "Advertising Consultant"].map((cred) => (
-                <span key={cred} style={{ fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.slate, border: `1px solid ${C.rule}`, padding: "0.3rem 0.65rem", backgroundColor: C.cream }}>
-                  {cred}
-                </span>
-              ))}
+              {["Founder, Ad Zombies", "Founder, Wedgie Creative", "Featured Keynote Speaker", "Fractional CMO", "Advertising Consultant"].map((cred) => {
+                const chipStyle = { fontFamily: sans, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: C.slate, border: `1px solid ${C.rule}`, padding: "0.3rem 0.65rem", backgroundColor: C.cream, textDecoration: "none" };
+                return cred === "Founder, Ad Zombies" ? (
+                  <a key={cred} href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={chipStyle}>{cred}</a>
+                ) : (
+                  <span key={cred} style={chipStyle}>{cred}</span>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -292,7 +296,7 @@ export default function IndexHome() {
               Ken <span style={{ color: C.red }}>"Spanky"</span> Moskowitz
             </div>
             <div style={{ fontFamily: sans, fontSize: "0.72rem", fontWeight: 400, color: "#7A7268", lineHeight: 1.7 }}>
-              Founder, Ad Zombies · Founder, Wedgie Creative<br />
+              Founder, <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit" }}>Ad Zombies</a> · Founder, Wedgie Creative<br />
               Featured Keynote Speaker · Fractional CMO · Advertising Consultant
             </div>
           </div>
@@ -303,6 +307,10 @@ export default function IndexHome() {
               <a href="#about" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>About</a>
               <a href="#brands" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>By Brand</a>
             </div>
+          </div>
+          <div>
+            <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>Ad Zombies</div>
+            <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none", display: "block" }}>adzombies.com</a>
           </div>
           <div style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 400, color: "#5A5248", textAlign: "right", alignSelf: "flex-end" }}>
             <div>10 Super Bowl Commercials · 2010–2026</div>
