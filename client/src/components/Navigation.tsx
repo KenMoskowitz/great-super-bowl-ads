@@ -109,6 +109,7 @@ export default function Navigation() {
             <a
               href={AD_ZOMBIES_CONTACT_URL}
               {...adZombiesLinkProps}
+              className="dz-nudge"
               style={{
                 fontFamily: "'Montserrat', system-ui, sans-serif",
                 fontSize: "0.72rem",
@@ -122,6 +123,7 @@ export default function Navigation() {
                 textDecoration: "none",
                 whiteSpace: "nowrap",
                 transition: "background-color 0.15s ease",
+                display: "inline-block",
               }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#A50D24"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#C8102E"; }}

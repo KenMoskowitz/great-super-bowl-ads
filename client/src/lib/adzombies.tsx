@@ -24,7 +24,7 @@ export function linkifyAdZombies(text: string): React.ReactNode[] {
     i === 0
       ? [part]
       : [
-          <a key={i} href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit", textDecoration: "underline" }}>
+          <a key={i} href={AD_ZOMBIES_URL} {...adZombiesLinkProps} className="dz-underline-reverse" style={{ color: "inherit" }}>
             Ad Zombies
           </a>,
           part,
