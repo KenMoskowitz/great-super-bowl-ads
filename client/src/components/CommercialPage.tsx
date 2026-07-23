@@ -16,6 +16,7 @@ import Navigation from "@/components/Navigation";
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
 import { AD_ZOMBIES_URL, adZombiesLinkProps, linkifyAdZombies } from "@/lib/adzombies";
+import { useDazzleReveal } from "@/hooks/useDazzleReveal";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -170,6 +171,7 @@ export default function CommercialPage({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPoster, setShowPoster] = useState(true);
+  useDazzleReveal();
 
   const handlePlay = () => {
     setShowPoster(false);
@@ -223,16 +225,24 @@ export default function CommercialPage({
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section
+        className="dz-kenburns-wrap"
         style={{
           position: "relative",
           minHeight: "70vh",
           display: "flex",
           alignItems: "flex-end",
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
+        <div
+          className="dz-kenburns"
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
         {/* Dark gradient overlay for text readability */}
         <div
           style={{
@@ -436,7 +446,7 @@ export default function CommercialPage({
           </h2>
 
           {creditSections.map((section, si) => (
-            <div key={si} style={{ marginBottom: "3rem" }}>
+            <div key={si} className="dz-reveal" style={{ ["--dz-delay" as string]: `${Math.min(si, 3) * 0.12}s`, marginBottom: "3rem" }}>
               {/* Section header */}
               <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "0.5rem" }}>
                 <h3 style={{ fontFamily: serif, fontSize: "1.25rem", fontWeight: 700, color: C.charcoal }}>
@@ -473,11 +483,13 @@ export default function CommercialPage({
               Explore All 10 Super Bowl Commercials
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.5rem" }}>
-              {relatedLinks.map((link) => (
+              {relatedLinks.map((link, li) => (
                 <Link
                   key={link.path}
                   href={link.path}
+                  className="dz-reveal"
                   style={{
+                    ["--dz-delay" as string]: `${(li % 4) * 0.1}s`,
                     fontFamily: sans,
                     fontSize: "0.8rem",
                     fontWeight: 600,
@@ -506,7 +518,7 @@ export default function CommercialPage({
               Ken <span style={{ color: C.red }}>"Spanky"</span> Moskowitz
             </div>
             <div style={{ fontFamily: sans, fontSize: "0.7rem", fontWeight: 400, color: "#7A7268", marginTop: "4px" }}>
-              Founder, <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit" }}>Ad Zombies</a> · Founder, Wedgie Creative · Fractional CMO · Keynote Speaker
+              Founder, <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} className="dz-underline-reverse" style={{ color: "inherit" }}>Ad Zombies</a> · Founder, Wedgie Creative · Fractional CMO · Keynote Speaker
             </div>
           </div>
           <div style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 400, color: "#5A5248", textAlign: "right" }}>

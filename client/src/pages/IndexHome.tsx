@@ -8,6 +8,7 @@ import Navigation from "@/components/Navigation";
 import { Link } from "wouter";
 import { useEffect } from "react";
 import { AD_ZOMBIES_URL, adZombiesLinkProps } from "@/lib/adzombies";
+import { useDazzleReveal } from "@/hooks/useDazzleReveal";
 
 const C = {
   cream: "#F8F5F0",
@@ -60,6 +61,7 @@ export default function IndexHome() {
   useEffect(() => {
     document.title = `Ken "Spanky" Moskowitz — Super Bowl Portfolio | 10 Iconic Commercials (${yearRange})`;
   }, []);
+  useDazzleReveal();
 
   return (
     <div style={{ backgroundColor: C.cream, minHeight: "100vh" }}>
@@ -67,16 +69,24 @@ export default function IndexHome() {
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section
+        className="dz-kenburns-wrap"
         style={{
           position: "relative",
           minHeight: "80vh",
           display: "flex",
           alignItems: "flex-end",
-          backgroundImage: "url(https://private-us-east-1.manuscdn.com/sessionFile/74D4rY78UoLus5hZrYfUHa/sandbox/g4IWIO5CX5FRx9WYV1PQ8g-img-1_1770611755000_na1fn_aGVyby1tb250YWdlLXN1cGVyYm93bC1hZHM.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvNzRENHJZNzhVb0x1czVoWnJZZlVIYS9zYW5kYm94L2c0SVdJTzVDWDVGUng5V1lWMVBROGctaW1nLTFfMTc3MDYxMTc1NTAwMF9uYTFmbl9hR1Z5YnkxdGIyNTBZV2RsTFhOMWNHVnlZbTkzYkMxaFpITS5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V-M9cRytr518LSBpmb~ZwGii91zHUYQkWYNiHE3gHTS7Cm52FghVaWVKf5KNjvN8dlnwCgjoOcrSPLY7F0~jWoA5UQEnfqG9ipeDTis85~IytsBwT3V9EVlch0qhmLRmDYU-L-Zw873PC1UjSrEkrYJcVZ3fF7dD7WNTU9IQxz3T3Qc7eOlM-G70Ds4PmTCFrKn2RaMg4lCdOrHAP4nu6i7ifS4UHIPhgCHoR~DSnfmTFUt9dTHM7nzQI7XGU~kMvGYqq9QGAK9I0qa8EmVYmhwMp15MEneYFvBzxlJb5bhERZZztwQz8scosv2CTiln-l05dEnOi-NIQ43uXIB34A__)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
+        <div
+          className="dz-kenburns"
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url(https://private-us-east-1.manuscdn.com/sessionFile/74D4rY78UoLus5hZrYfUHa/sandbox/g4IWIO5CX5FRx9WYV1PQ8g-img-1_1770611755000_na1fn_aGVyby1tb250YWdlLXN1cGVyYm93bC1hZHM.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvNzRENHJZNzhVb0x1czVoWnJZZlVIYS9zYW5kYm94L2c0SVdJTzVDWDVGUng5V1lWMVBROGctaW1nLTFfMTc3MDYxMTc1NTAwMF9uYTFmbl9hR1Z5YnkxdGIyNTBZV2RsTFhOMWNHVnlZbTkzYkMxaFpITS5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V-M9cRytr518LSBpmb~ZwGii91zHUYQkWYNiHE3gHTS7Cm52FghVaWVKf5KNjvN8dlnwCgjoOcrSPLY7F0~jWoA5UQEnfqG9ipeDTis85~IytsBwT3V9EVlch0qhmLRmDYU-L-Zw873PC1UjSrEkrYJcVZ3fF7dD7WNTU9IQxz3T3Qc7eOlM-G70Ds4PmTCFrKn2RaMg4lCdOrHAP4nu6i7ifS4UHIPhgCHoR~DSnfmTFUt9dTHM7nzQI7XGU~kMvGYqq9QGAK9I0qa8EmVYmhwMp15MEneYFvBzxlJb5bhERZZztwQz8scosv2CTiln-l05dEnOi-NIQ43uXIB34A__)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.88) 100%)" }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1, paddingBottom: "4rem", paddingTop: "2rem" }}>
@@ -99,13 +109,19 @@ export default function IndexHome() {
 
           <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
             {[
-              { num: "10", label: "Super Bowl Commercials" },
-              { num: `${yearSpan}`, label: `Years (${yearRange})` },
-              { num: "3×", label: "Ad Meter Top Wins" },
-              { num: "8", label: "Iconic Brands" },
+              { num: "10", count: "10", suffix: "", label: "Super Bowl Commercials" },
+              { num: `${yearSpan}`, count: `${yearSpan}`, suffix: "", label: `Years (${yearRange})` },
+              { num: "3×", count: "3", suffix: "×", label: "Ad Meter Top Wins" },
+              { num: "8", count: "8", suffix: "", label: "Iconic Brands" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div style={{ fontFamily: serif, fontSize: "2rem", fontWeight: 900, color: "#FFFFFF", lineHeight: 1 }}>{stat.num}</div>
+                <div
+                  style={{ fontFamily: serif, fontSize: "2rem", fontWeight: 900, color: "#FFFFFF", lineHeight: 1 }}
+                  data-dz-count={stat.count}
+                  data-dz-suffix={stat.suffix}
+                >
+                  {stat.num}
+                </div>
                 <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: C.gold, marginTop: "4px" }}>{stat.label}</div>
               </div>
             ))}
@@ -126,7 +142,7 @@ export default function IndexHome() {
 
           <div style={{ borderLeft: `4px solid ${C.gold}`, paddingLeft: "1.75rem", maxWidth: "820px" }}>
             <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.25rem" }}>
-              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning {yearSpan} years. As <strong>Founder of <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit" }}>Ad Zombies</a></strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
+              Ken <strong>"Spanky" Moskowitz</strong> is one of advertising's most prolific Super Bowl contributors — with 10 iconic commercials spanning {yearSpan} years. As <strong>Founder of <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} className="dz-underline-reverse" style={{ color: "inherit" }}>Ad Zombies</a></strong> and <strong>Founder of Wedgie Creative</strong>, Ken has built a reputation for crafting advertising narratives that don't just sell products — they become cultural moments.
             </p>
             <p style={{ fontFamily: sans, fontSize: "1rem", fontWeight: 400, color: C.ink, lineHeight: 1.8, marginBottom: "1.5rem" }}>
               A <strong>Featured Keynote Speaker</strong>, <strong>Fractional CMO</strong> for several companies, and <strong>Advertising Consultant</strong> for some of the world's biggest brands, Ken brings a rare combination of creative brilliance and strategic business acumen to every project he touches.
@@ -164,24 +180,16 @@ export default function IndexHome() {
             {commercials.map((c, i) => (
               <Link key={c.path} href={c.path} style={{ textDecoration: "none", display: "block" }}>
                 <div
-                  className="fade-up"
+                  className="dz-reveal dz-lift"
                   style={{
+                    ["--dz-delay" as string]: `${(i % 3) * 0.12}s`,
                     backgroundColor: C.white,
                     border: `1px solid ${C.rule}`,
                     borderTop: `3px solid ${i % 2 === 0 ? C.red : C.gold}`,
                     cursor: "pointer",
-                    transition: "transform 0.15s ease, box-shadow 0.15s ease",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 24px rgba(0,0,0,0.12)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
                   }}
                 >
                   <div style={{ position: "relative", aspectRatio: "16 / 9", overflow: "hidden", backgroundColor: C.charcoal }}>
@@ -241,21 +249,14 @@ export default function IndexHome() {
             ].map((brand, i) => (
               <Link key={brand.path} href={brand.path} style={{ textDecoration: "none", display: "block" }}>
                 <div
+                  className="dz-reveal dz-lift"
                   style={{
+                    ["--dz-delay" as string]: `${(i % 4) * 0.12}s`,
                     backgroundColor: C.white,
                     border: `1px solid ${C.rule}`,
                     borderTop: `3px solid ${i % 2 === 0 ? C.red : C.gold}`,
                     padding: "1.5rem",
                     height: "100%",
-                    transition: "transform 0.15s ease, box-shadow 0.15s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 18px rgba(0,0,0,0.1)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
                   }}
                 >
                   <div
@@ -296,21 +297,21 @@ export default function IndexHome() {
               Ken <span style={{ color: C.red }}>"Spanky"</span> Moskowitz
             </div>
             <div style={{ fontFamily: sans, fontSize: "0.72rem", fontWeight: 400, color: "#7A7268", lineHeight: 1.7 }}>
-              Founder, <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ color: "inherit" }}>Ad Zombies</a> · Founder, Wedgie Creative<br />
+              Founder, <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} className="dz-underline-reverse" style={{ color: "inherit" }}>Ad Zombies</a> · Founder, Wedgie Creative<br />
               Featured Keynote Speaker · Fractional CMO · Advertising Consultant
             </div>
           </div>
           <div>
             <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>Site</div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-              <a href="#portfolio" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>Portfolio</a>
-              <a href="#about" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>About</a>
-              <a href="#brands" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none" }}>By Brand</a>
+              <a href="#portfolio" className="dz-underline" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", display: "inline-block", width: "fit-content" }}>Portfolio</a>
+              <a href="#about" className="dz-underline" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", display: "inline-block", width: "fit-content" }}>About</a>
+              <a href="#brands" className="dz-underline" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", display: "inline-block", width: "fit-content" }}>By Brand</a>
             </div>
           </div>
           <div>
             <div style={{ fontFamily: sans, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.gold, marginBottom: "0.75rem" }}>Ad Zombies</div>
-            <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", textDecoration: "none", display: "block" }}>adzombies.com</a>
+            <a href={AD_ZOMBIES_URL} {...adZombiesLinkProps} className="dz-underline" style={{ fontFamily: sans, fontSize: "0.78rem", fontWeight: 400, color: "#7A7268", display: "inline-block", width: "fit-content" }}>adzombies.com</a>
           </div>
           <div style={{ fontFamily: sans, fontSize: "0.65rem", fontWeight: 400, color: "#5A5248", textAlign: "right", alignSelf: "flex-end" }}>
             <div>10 Super Bowl Commercials · 2010–2026</div>
